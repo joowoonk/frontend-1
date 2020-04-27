@@ -10,11 +10,11 @@ function App() {
 	return (
 		<div>
 			<Switch>
-				<Route path='/Login'>
+				<Route path='/login'>
 					<LoginPage />
 				</Route>
 
-				<Route path='/SignUp'>
+				<Route path='/signup'>
 					<SignUpPage />
 				</Route>
 			</Switch>
