@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import notes from './notes';
-import inputs from './inputs';
+import { combineReducers } from "redux";
+import songs from "./songs";
+import inputs from "./inputs";
 
 export default combineReducers({
-  notes,
+  songs,
   inputs,
-})
+});
