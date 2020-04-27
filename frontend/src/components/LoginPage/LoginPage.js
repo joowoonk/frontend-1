@@ -16,12 +16,40 @@ const initFormErrors = {
 	password: ''
 }
 
+const formSchema = yup.object().shape({
+	username: yup
+		.string()
+		.required('Username is required'),
+	password: yup
+		.string()
+		.required('Password is required')
+})
+
 function LoginPage() {
 
 	const [formValues, setFormValues] = useState(initFormValues);
 	const [formErrors, setFormErrors] = useState(initFormErrors);
 
 	const onInputChange = evt => {
+		const name = evt.target.name;
+		const value = evt.target.value;
+
+		yup
+			.reach(formSchema, name)
+			.validate(value)
+			.then(valid => {
+				setFormErrors({
+					...formErrors,
+					[name]: ''
+				});
+			})
+			.catch(err => {
+				setFormErrors({
+					...formErrors,
+					[name]: err.errors[0]
+				});
+			})
+
 		setFormValues({
 			...formValues,
 			[evt.target.name]: evt.target.value
@@ -39,7 +67,7 @@ function LoginPage() {
 				</nav> */}
 			</header>
 
-			<LoginForm values={formValues} onInputChange={onInputChange}/>
+			<LoginForm values={formValues} onInputChange={onInputChange} errors={formErrors}/>
 		</div>
 	);
 }
