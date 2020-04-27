@@ -10,13 +10,20 @@ function App() {
 	return (
 		<div>
 			<Switch>
+
+				<Route exact path='/'>
+					<Link to='/login'>
+						<button>Login</button>
+					</Link>
+				</Route>
+
 				<Route path='/login'>
 					<LoginPage />
 				</Route>
 
-				{/* <Route path='/signup'>
+				<Route path='/signup'>
 					<SignUpPage />
-				</Route> */}
+				</Route>
 			</Switch>
 		</div>
 	);

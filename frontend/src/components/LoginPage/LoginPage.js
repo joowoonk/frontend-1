@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import axios from 'axios';
+// import axios from 'axios';
 import * as yup from 'yup';
 
 import LoginForm from './LoginForm.js';
@@ -68,6 +68,9 @@ function LoginPage() {
 			</header>
 
 			<LoginForm values={formValues} onInputChange={onInputChange} errors={formErrors}/>
+			<Link to='/signup'>
+				<button>Sign Up</button>
+			</Link>
 		</div>
 	);
 }
