@@ -5,6 +5,7 @@ function SignUpForm(props) {
 	const {
 		values,
 		onInputChange,
+		onCheckboxChange,
 		handleSubmit,
 		errors
 	} = props;
@@ -18,6 +19,7 @@ function SignUpForm(props) {
 			{/* maybe dropdown for birthday */}
 			<label>Password - <input value={values.password} onChange={onInputChange} name='password' type='text'/></label>
 			<label>Confirm Password - <input value={values.confirmPassword} onChange={onInputChange} name='confirmPassword' type='text'/></label>
+			<label>Terms and Conditions - <input value={values.terms} onChange={onCheckboxChange} name='terms' type='checkbox'/></label>
 			<button onClick={handleSubmit} name='submit'>Create Account</button>
 		</form>
 	);

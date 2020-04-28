@@ -12,7 +12,8 @@ const initFormValues = {
 	username: '',
 	email: '',
 	password: '',
-	confirmPassword: ''
+	confirmPassword: '',
+	terms: false
 }
 
 const initFormErrors = {
@@ -21,7 +22,8 @@ const initFormErrors = {
 	username: '',
 	email: '',
 	password: '',
-	confirmPassword: ''
+	confirmPassword: '',
+	terms: ''
 }
 
 const formSchema = yup.object().shape({
@@ -42,10 +44,16 @@ const formSchema = yup.object().shape({
 		.email('Please enter a valid email address'),
 	password: yup
 		.string()
-		.required('Password is required')
-		.min(6, 'Password must have a minimum of 6 characters'),
+		.required('Password is required'),
 	confirmPassword: yup
-		.string()
+		.string(),
+	// 	// .oneOf([yup.ref('password'), null], 'Passwords must match')
+	// 	.test('match', 'Passwords must match', function(value) {
+	// 		return this.parent.password === value;
+	// 	})
+	terms: yup
+		.boolean()
+		.oneOf([true], 'You must accept the terms and conditions')
 })
 
 function SignUpPage() {
@@ -75,7 +83,33 @@ function SignUpPage() {
 
 		setFormValues({
 			...formValues,
-			[evt.target.name]: evt.target.value
+			[name]: value
+		});
+	}
+
+	const onCheckboxChange = evt => {
+		const name = evt.target.name;
+		const value = evt.target.value;
+
+		yup
+			.reach(formSchema, name)
+			.validate(evt.target.checked)
+			.then(valid => {
+				setFormErrors({
+					...formErrors,
+					[name]: ''
+				});
+			})
+			.catch(err => {
+				setFormErrors({
+					...formErrors,
+					[name]: err.errors[0]
+				});
+			})
+
+		setFormValues({
+			...formValues,
+			[name]: evt.target.checked
 		});
 	}
 
@@ -94,7 +128,7 @@ function SignUpPage() {
 				</nav> */}
 			</header>
 
-			<SignUpForm values={formValues} onInputChange={onInputChange} handleSubmit={handleSubmit} errors={formErrors}/>
+			<SignUpForm values={formValues} onInputChange={onInputChange} onCheckboxChange={onCheckboxChange} handleSubmit={handleSubmit} errors={formErrors}/>
 		</div>
 	);
 }
