@@ -71,22 +71,15 @@ function LoginPage() {
     axiosWithAuth()
       .post("/auth/login", formValues)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         localStorage.setItem("token", res.data.token);
-        push("/songlist");
+        push("/usersonglist");
       });
   };
 
   return (
     <div className="login-page">
-      <header className="login-page-header">
-        {/* <img src={logo} alt='website logo'/> */}
-        <h1 className="login-page-title">Project Name</h1>
-
-        <nav>
-          <Link to="/">Home</Link>
-        </nav>
-      </header>
+      <header className="login-page-header"></header>
 
       <LoginForm
         values={formValues}
