@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import axios from 'axios';
+// import axios from 'axios';
 import * as yup from 'yup';
 
 import LoginForm from './LoginForm.js';
@@ -62,12 +62,15 @@ function LoginPage() {
 				{/* <img src={logo} alt='website logo'/> */}
 				<h1 className='login-page-title'>Project Name</h1>
 
-				{/* <nav>
-					<Link to='/'></Link>
-				</nav> */}
+				<nav>
+					<Link to='/'>Home</Link>
+				</nav>
 			</header>
 
 			<LoginForm values={formValues} onInputChange={onInputChange} errors={formErrors}/>
+			<Link to='/signup'>
+				<button>Don't Have a [Project Name] Account? Sign Up Here</button>
+			</Link>
 		</div>
 	);
 }
