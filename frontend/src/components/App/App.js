@@ -1,7 +1,8 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-// import LoginPage from "../../pages/LoginPage/LoginPage.js";
+import NavBar from "../../components/NavBar/NavBar";
+import LoginPage from "../../pages/LoginPage/LoginPage.js";
 import SignUpPage from "../../pages/Registration/SignUpPage";
 
 import "./App.css";
@@ -12,14 +13,17 @@ import HomePage from "../../pages/HomePage.js";
 function App() {
   return (
     <div>
+      <Route path="/">
+        <NavBar />
+      </Route>
+
       <Switch>
         <Route exact path="/">
-          <h1>Project Home Page Will Be Here</h1>
-          <Link to="/login">Login Page</Link>
+          <HomePage />
         </Route>
 
         <Route path="/login">
-          <HomePage />
+          <LoginPage />
         </Route>
 
         <Route path="/signup">

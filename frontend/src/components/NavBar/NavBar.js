@@ -1,17 +1,17 @@
 import React from "react";
-import "./nav.styles.scss";
+import NavStyles from "./NavStyles.jsx";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const NavBar = () => {
   return (
-    <nav className="topNav">
+    <NavStyles>
       <h1 className="logo">DEEPTUNES</h1>
       <div className="menuNav">
         <Link to="/">Home</Link>
         <Link to="login">Log In/Out</Link>
       </div>
-    </nav>
+    </NavStyles>
   );
 };
 
-export default Nav;
+export default NavBar;

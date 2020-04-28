@@ -9,8 +9,8 @@ function LoginForm(props) {
         {<p>{errors.username}</p>}
         {<p>{errors.password}</p>}
       </div>
-      <label>
-        Username -{" "}
+      <label className="username-input">
+        Username{" "}
         <input
           value={values.username}
           onChange={onInputChange}
@@ -18,8 +18,8 @@ function LoginForm(props) {
           type="text"
         />
       </label>
-      <label>
-        Password -{" "}
+      <label className="password-input">
+        Password{" "}
         <input
           value={values.password}
           onChange={onInputChange}
