@@ -1,21 +1,23 @@
 import styled from "styled-components";
-import { fadedBlack, babySeal, aqua } from "../styles/ComponentStyleConstants";
+import { aqua, bangers } from "../styles/ComponentStyleConstants";
 
 const NavStyles = styled.nav`
   display: flex;
   justify-content: space-evenly;
-  background-color: ${fadedBlack.background};
-  opacity: ${fadedBlack.opacity};
+
+  background-color: black;
   font-size: 1.5rem;
 
   h1 {
     color: ${aqua};
-    font-family: Bangers, cursive;
+    opacity: 1;
+    font-family: ${bangers};
     font-size: 5rem;
     margin: 2%;
   }
 
   .menuNav {
+    opacity: 1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
