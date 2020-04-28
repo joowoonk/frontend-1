@@ -4,8 +4,8 @@ export const axiosWithAuth = () => {
   const token = localStorage.getItem("token");
   return axios.create({
     headers: {
-      Authorization: token,
+      authorization: token,
     },
-    baseURL: "https://spotifysuggester-03.herokuapp.com/api/",
+    baseURL: "https://spotifysuggester-03.herokuapp.com/api",
   });
 };

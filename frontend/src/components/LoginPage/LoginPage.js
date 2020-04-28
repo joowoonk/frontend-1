@@ -1,101 +1,104 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // import axios from 'axios';
-import * as yup from 'yup';
+import * as yup from "yup";
 
-import LoginForm from './LoginForm.js';
+import LoginForm from "./LoginForm.js";
+import { axiosWithAuth } from "../../utils/axiosWithAuth.js";
+import { useHistory } from "react-router-dom";
 
 // const url = '';
 
 const initFormValues = {
-	username: '',
-	password: ''
-}
+  username: "",
+  password: "",
+};
 
 const initFormErrors = {
-	username: '',
-	password: ''
-}
+  username: "",
+  password: "",
+};
 
 const formSchema = yup.object().shape({
-	username: yup
-		.string()
-		.required('Username is required'),
-	password: yup
-		.string()
-		.required('Password is required')
-})
+  username: yup.string().required("Username is required"),
+  password: yup.string().required("Password is required"),
+});
 
 function LoginPage() {
+  const [formValues, setFormValues] = useState(initFormValues);
+  const [formErrors, setFormErrors] = useState(initFormErrors);
+  const { push } = useHistory();
 
-	const [formValues, setFormValues] = useState(initFormValues);
-	const [formErrors, setFormErrors] = useState(initFormErrors);
+  // const postUser = user => {
+  // 	axios.post(url)
+  // 		.then(res => {
+  // 			setUsers([...users, res.data]);
+  // 		})
+  // 		.catch(err => {
+  // 			console.log('error from trying to post user');
+  // 		})
+  // }
 
-	// const postUser = user => {
-	// 	axios.post(url)
-	// 		.then(res => {
-	// 			setUsers([...users, res.data]);
-	// 		})
-	// 		.catch(err => {
-	// 			console.log('error from trying to post user');
-	// 		})
-	// }
+  const onInputChange = (evt) => {
+    const name = evt.target.name;
+    const value = evt.target.value;
 
-	const onInputChange = evt => {
-		const name = evt.target.name;
-		const value = evt.target.value;
+    yup
+      .reach(formSchema, name)
+      .validate(value)
+      .then((valid) => {
+        setFormErrors({
+          ...formErrors,
+          [name]: "",
+        });
+      })
+      .catch((err) => {
+        setFormErrors({
+          ...formErrors,
+          [name]: err.errors[0],
+        });
+      });
 
-		yup
-			.reach(formSchema, name)
-			.validate(value)
-			.then(valid => {
-				setFormErrors({
-					...formErrors,
-					[name]: ''
-				});
-			})
-			.catch(err => {
-				setFormErrors({
-					...formErrors,
-					[name]: err.errors[0]
-				});
-			})
+    setFormValues({
+      ...formValues,
+      [evt.target.name]: evt.target.value,
+    });
+  };
 
-		setFormValues({
-			...formValues,
-			[evt.target.name]: evt.target.value
-		});
-	}
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    axiosWithAuth()
+      .post("/auth/login", formValues)
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem("token", res.data.token);
+        push("/songlist");
+      });
+  };
 
-	const handleSubmit = evt => {
-		evt.preventDefault();
+  return (
+    <div className="login-page">
+      <header className="login-page-header">
+        {/* <img src={logo} alt='website logo'/> */}
+        <h1 className="login-page-title">Project Name</h1>
 
-		// const user = {
-		// 	username: formValues.username,
-		// 	password: formValues.password
-		// }
-		//
-		// postUser(user);
-	}
+        <nav>
+          <Link to="/">Home</Link>
+        </nav>
+      </header>
 
-	return (
-		<div className='login-page'>
-			<header className='login-page-header'>
-				{/* <img src={logo} alt='website logo'/> */}
-				<h1 className='login-page-title'>Project Name</h1>
-
-				<nav>
-					<Link to='/'>Home</Link>
-				</nav>
-			</header>
-
-			<LoginForm values={formValues} onInputChange={onInputChange} handleSubmit={handleSubmit} errors={formErrors}/>
-			<Link to='/signup'>
-				<button>Don't Have a [Project Name] Account? Sign Up Here</button>
-			</Link>
-		</div>
-	);
+      <LoginForm
+        values={formValues}
+        onInputChange={onInputChange}
+        handleSubmit={handleSubmit}
+        errors={formErrors}
+      />
+      <Link to="/signup">
+        <button>Don't Have a [Project Name] Account? Sign Up Here</button>
+      </Link>
+    </div>
+  );
 }
 
 export default LoginPage;
