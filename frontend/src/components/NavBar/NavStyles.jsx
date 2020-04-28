@@ -27,9 +27,14 @@ const NavStyles = styled.nav`
     a {
       color: ${aqua};
       text-decoration: none;
+      border-radius: 5px;
+      width: 80%;
+      text-align: center;
+      padding: 1%;
 
       &:hover {
-        color: white;
+        color: black;
+        background-color: ${aqua};
       }
     }
   }
