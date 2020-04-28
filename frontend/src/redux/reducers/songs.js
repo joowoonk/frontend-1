@@ -1,38 +1,55 @@
-import actionTypes from "../actionTypes";
+// import actionTypes from "../actionTypes";
 
 const initialState = {
   songs: [],
+  error: "",
+  chosen: false,
+  addingSong: [
+    {
+      id: "",
+    },
+  ],
 };
 
-export default (state = initialState, action) => {
+export const songsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ADD_NOTE: {
-      const songs = [...state.songs];
-      songs.push(action.song);
+    case "FETCH_SONG_START":
       return {
-        songs,
+        ...state,
       };
-    }
-    case actionTypes.UPDATE_NOTE: {
-      const { index, song } = action;
-      const songs = [...state.songs];
-      songs[index] = song;
+    case "FETCH_SONG_SUCCESS":
       return {
-        songs,
+        ...state,
+        song: action.payload,
+        error: "",
       };
-    }
-    case actionTypes.DELETE_NOTE: {
-      const { index } = action;
-      const songs = [];
-      state.songs.forEach((song, i) => {
-        if (index !== i) {
-          songs.push(song);
-        }
-      });
+    case "FETCH_SONG_FAILURE":
       return {
-        songs,
+        ...state,
+        err: action.payload,
       };
-    }
+    case "CHOOSE_SONG_SUCCESS":
+      return {
+        ...state,
+        // song: action.payload,
+        chosen: !state.chosen,
+        error: "",
+      };
+    case "CHOOSE_SONG_FAILURE":
+      return {
+        ...state,
+        error: action.payload,
+      };
+    case "POST_SONG_SUCCESS":
+      return {
+        ...state,
+        addingSong: [action.payload],
+      };
+    case "POST_SONG_FAILURE":
+      return {
+        ...state,
+        error: action.payload,
+      };
     default:
       return state;
   }
