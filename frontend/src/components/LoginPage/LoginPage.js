@@ -69,7 +69,7 @@ function LoginPage() {
 
 			<LoginForm values={formValues} onInputChange={onInputChange} errors={formErrors}/>
 			<Link to='/signup'>
-				<button>Sign Up</button>
+				<button>Don't Have a [Project Name] Account? Sign Up Here</button>
 			</Link>
 		</div>
 	);
