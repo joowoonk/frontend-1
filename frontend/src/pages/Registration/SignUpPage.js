@@ -40,7 +40,7 @@ const formSchema = yup.object().shape({
 });
 
 function SignUpPage() {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
   const [formValues, setFormValues] = useState(initFormValues);
   const [formErrors, setFormErrors] = useState(initFormErrors);
