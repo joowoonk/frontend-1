@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// import axios from 'axios';
 import * as yup from "yup";
 
 import LoginForm from "./LoginForm.js";
 import { axiosWithAuth } from "../../utils/axiosWithAuth.js";
 import { useHistory } from "react-router-dom";
-
-// const url = '';
 
 const initFormValues = {
   username: "",
@@ -29,16 +26,6 @@ function LoginPage() {
   const [formValues, setFormValues] = useState(initFormValues);
   const [formErrors, setFormErrors] = useState(initFormErrors);
   const { push } = useHistory();
-
-  // const postUser = user => {
-  // 	axios.post(url)
-  // 		.then(res => {
-  // 			setUsers([...users, res.data]);
-  // 		})
-  // 		.catch(err => {
-  // 			console.log('error from trying to post user');
-  // 		})
-  // }
 
   const onInputChange = (evt) => {
     const name = evt.target.name;
@@ -71,7 +58,6 @@ function LoginPage() {
     axiosWithAuth()
       .post("/auth/login", formValues)
       .then((res) => {
-        // console.log(res.data);
         localStorage.setItem("token", res.data.token);
         push("/preference");
       });

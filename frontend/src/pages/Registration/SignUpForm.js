@@ -1,7 +1,7 @@
 import React from "react";
 
 function SignUpForm(props) {
-  //   console.log(props);
+
   const {
     values,
     onInputChange,
@@ -14,32 +14,11 @@ function SignUpForm(props) {
     <>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <div className="errors">
-          {/* {<p>{errors.firstName}</p>} */}
-          {/* {<p>{errors.lastName}</p>} */}
           {<p>{errors.username}</p>}
-          {/* {<p>{errors.email}</p>} */}
           {<p>{errors.password}</p>}
-          {/* {<p>{errors.}</p>} */}
           {<p>{errors.terms}</p>}
         </div>
-        {/* <label>
-        First Name -{" "}
-        <input
-          value={values.firstName}
-          onChange={onInputChange}
-          name="firstName"
-          type="text"
-        />
-      </label>
-      <label>
-        Last Name -{" "}
-        <input
-          value={values.lastName}
-          onChange={onInputChange}
-          name="lastName"
-          type="text"
-        />
-      </label> */}
+
         <label>
           Username -{" "}
           <input
@@ -49,16 +28,6 @@ function SignUpForm(props) {
             type="text"
           />
         </label>
-        {/* <label>
-        Email -{" "}
-        <input
-          value={values.email}
-          onChange={onInputChange}
-          name="email"
-          type="email"
-        />
-      </label> */}
-        {/* maybe dropdown for birthday */}
         <label>
           Password -{" "}
           <input
