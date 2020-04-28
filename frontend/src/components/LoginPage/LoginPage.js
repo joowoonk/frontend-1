@@ -62,9 +62,9 @@ function LoginPage() {
 				{/* <img src={logo} alt='website logo'/> */}
 				<h1 className='login-page-title'>Project Name</h1>
 
-				{/* <nav>
-					<Link to='/'></Link>
-				</nav> */}
+				<nav>
+					<Link to='/'>Home</Link>
+				</nav>
 			</header>
 
 			<LoginForm values={formValues} onInputChange={onInputChange} errors={formErrors}/>

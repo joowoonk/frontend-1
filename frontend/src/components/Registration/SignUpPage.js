@@ -103,7 +103,6 @@ function SignUpPage() {
 
 	const onCheckboxChange = evt => {
 		const name = evt.target.name;
-		const value = evt.target.value;
 
 		yup
 			.reach(formSchema, name)
@@ -150,9 +149,9 @@ function SignUpPage() {
 				<h1 className='sign-up-page-title'>Sign Up for [Project Name]</h1>
 				{/* <img src={logo} alt='website logo'/> */}
 
-				{/* <nav>
-					<Link to='/'></Link>
-				</nav> */}
+				<nav>
+					<Link to='/'>Home</Link>
+				</nav>
 			</header>
 
 			<SignUpForm values={formValues} onInputChange={onInputChange} onCheckboxChange={onCheckboxChange} handleSubmit={handleSubmit} errors={formErrors}/>
