@@ -6,6 +6,8 @@ import * as yup from 'yup';
 
 import SignUpForm from './SignUpForm.js';
 
+// const url = '';
+
 const initFormValues = {
 	firstName: '',
 	lastName: '',
@@ -58,8 +60,20 @@ const formSchema = yup.object().shape({
 
 function SignUpPage() {
 
+	const [users, setUsers] = useState([]);
+
 	const [formValues, setFormValues] = useState(initFormValues);
 	const [formErrors, setFormErrors] = useState(initFormErrors);
+
+	// const postUser = user => {
+	// 	axios.post(url)
+	// 		.then(res => {
+	// 			setUsers([...users, res.data]);
+	// 		})
+	// 		.catch(err => {
+	// 			console.log('error from trying to post user');
+	// 		})
+	// }
 
 	const onInputChange = evt => {
 		const name = evt.target.name;
@@ -114,7 +128,20 @@ function SignUpPage() {
 	}
 
 	const handleSubmit = evt => {
+		evt.preventDefault()
 
+		// const newUser = {
+		// 	firstName: formValues.firstName,
+		// 	lastName: formValues.lastName,
+		// 	username: formValues.username,
+		// 	email: formValues.email,
+		// 	password: formValues.password,
+		// 	confirmPassword: formValues.confirmPassword,
+		// 	terms: formValues.terms
+		// }
+		//
+		// postUser(newUser);
+		// setFormValues(initFormValues);
 	}
 
 	return (
