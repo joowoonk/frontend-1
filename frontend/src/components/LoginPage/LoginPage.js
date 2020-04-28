@@ -73,7 +73,7 @@ function LoginPage() {
       .then((res) => {
         // console.log(res.data);
         localStorage.setItem("token", res.data.token);
-        push("/usersonglist");
+        push("/preference");
       });
   };
 
