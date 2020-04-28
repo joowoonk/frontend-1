@@ -27,6 +27,10 @@ const NavStyles = styled.nav`
     a {
       color: ${aqua};
       text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 `
