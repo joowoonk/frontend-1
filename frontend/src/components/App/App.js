@@ -2,11 +2,12 @@ import React from "react";
 import { Route, Switch, Link } from "react-router-dom";
 
 import LoginPage from "../LoginPage/LoginPage.js";
-import SignUpPage from "../Registration/SignUpPage.js";
+import SignUpPage from "../../pages/Registration/SignUpPage";
 
 import "./App.css";
 import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
 import UserPlaylist from "../UserPlaylist/UserPlaylist.js";
+import HomePage from "../../pages/HomePage.js";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <LoginPage />
+          <HomePage />
         </Route>
 
         <Route path="/signup">
