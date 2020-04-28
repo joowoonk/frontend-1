@@ -12,6 +12,15 @@ function SignUpForm(props) {
 
 	return (
 		<form className='sign-up-form'>
+			<div className='errors'>
+				{<p>{errors.firstName}</p>}
+				{<p>{errors.lastName}</p>}
+				{<p>{errors.username}</p>}
+				{<p>{errors.email}</p>}
+				{<p>{errors.password}</p>}
+				{/* {<p>{errors.}</p>} */}
+				{<p>{errors.terms}</p>}
+			</div>
 			<label>First Name - <input value={values.firstName} onChange={onInputChange} name='firstName' type='text'/></label>
 			<label>Last Name - <input value={values.lastName} onChange={onInputChange} name='lastName' type='text'/></label>
 			<label>Username - <input value={values.username} onChange={onInputChange} name='username' type='text'/></label>
