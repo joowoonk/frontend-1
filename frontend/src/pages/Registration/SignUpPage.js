@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
+import SignUpPageStyles from "./SignUpPageStyles.jsx";
 
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
@@ -40,7 +40,7 @@ const formSchema = yup.object().shape({
 });
 
 function SignUpPage() {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
   const [formValues, setFormValues] = useState(initFormValues);
   const [formErrors, setFormErrors] = useState(initFormErrors);
@@ -114,7 +114,7 @@ function SignUpPage() {
         })
         .then((res) => {
           console.log("testing", { res });
-          push("/preference");
+          push("/login");
         })
         .catch((err) => console.log(err, "ERROR TO SIGN UP"));
     } else {
@@ -124,12 +124,8 @@ function SignUpPage() {
   };
 
   return (
-    <div className="sign-up-page">
-      <header className="sign-up-header">
-        <NavBar />
-
-        {/* <img src={logo} alt='website logo'/> */}
-      </header>
+    <SignUpPageStyles>
+      <header className="sign-up-header"></header>
 
       <SignUpForm
         values={formValues}
@@ -139,9 +135,9 @@ function SignUpPage() {
         errors={formErrors}
       />
       <Link to="/login">
-        <button>Already a [Project Name] User? Login Here</button>
+        <button>Already a DeepTunes User? Login Here</button>
       </Link>
-    </div>
+    </SignUpPageStyles>
   );
 }
 

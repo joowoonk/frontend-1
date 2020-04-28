@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import LoginPageStyles from "./LoginPageStyles.jsx";
 
 import * as yup from "yup";
 
@@ -64,7 +65,7 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-page">
+    <LoginPageStyles>
       <header className="login-page-header"></header>
 
       <LoginForm
@@ -74,9 +75,9 @@ function LoginPage() {
         errors={formErrors}
       />
       <Link to="/signup">
-        <button>Don't Have a [Project Name] Account? Sign Up Here</button>
+        <button>Don't Have a DeepTunes Account? Sign Up Here</button>
       </Link>
-    </div>
+    </LoginPageStyles>
   );
 }
 
