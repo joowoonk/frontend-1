@@ -156,6 +156,9 @@ function SignUpPage() {
 			</header>
 
 			<SignUpForm values={formValues} onInputChange={onInputChange} onCheckboxChange={onCheckboxChange} handleSubmit={handleSubmit} errors={formErrors}/>
+			<Link to='/login'>
+				<button>Already a [Project Name] User? Login Here</button>
+			</Link>
 		</div>
 	);
 }
