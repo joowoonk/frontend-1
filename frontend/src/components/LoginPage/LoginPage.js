@@ -6,6 +6,8 @@ import * as yup from 'yup';
 
 import LoginForm from './LoginForm.js';
 
+// const url = '';
+
 const initFormValues = {
 	username: '',
 	password: ''
@@ -29,6 +31,16 @@ function LoginPage() {
 
 	const [formValues, setFormValues] = useState(initFormValues);
 	const [formErrors, setFormErrors] = useState(initFormErrors);
+
+	// const postUser = user => {
+	// 	axios.post(url)
+	// 		.then(res => {
+	// 			setUsers([...users, res.data]);
+	// 		})
+	// 		.catch(err => {
+	// 			console.log('error from trying to post user');
+	// 		})
+	// }
 
 	const onInputChange = evt => {
 		const name = evt.target.name;
@@ -56,6 +68,17 @@ function LoginPage() {
 		});
 	}
 
+	const handleSubmit = evt => {
+		evt.preventDefault();
+
+		// const user = {
+		// 	username: formValues.username,
+		// 	password: formValues.password
+		// }
+		//
+		// postUser(user);
+	}
+
 	return (
 		<div className='login-page'>
 			<header className='login-page-header'>
@@ -67,7 +90,7 @@ function LoginPage() {
 				</nav>
 			</header>
 
-			<LoginForm values={formValues} onInputChange={onInputChange} errors={formErrors}/>
+			<LoginForm values={formValues} onInputChange={onInputChange} handleSubmit={handleSubmit} errors={formErrors}/>
 			<Link to='/signup'>
 				<button>Don't Have a [Project Name] Account? Sign Up Here</button>
 			</Link>

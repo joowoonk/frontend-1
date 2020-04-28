@@ -5,6 +5,7 @@ function LoginForm(props) {
 	const {
 		values,
 		onInputChange,
+		handleSubmit,
 		errors
 	} = props;
 
@@ -16,6 +17,7 @@ function LoginForm(props) {
 			</div>
 			<label>Username - <input value={values.username} onChange={onInputChange} name='username' type='text'/></label>
 			<label>Password - <input value={values.password} onChange={onInputChange} name='password' type='text'/></label>
+			<button onClick={handleSubmit} name='login'>Login</button>
 		</form>
 	);
 }
