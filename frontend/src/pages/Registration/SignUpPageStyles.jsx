@@ -16,12 +16,25 @@ const SignUpPageStyles = styled.div`
     margin-top: 10%;
   }
 
+  .terms-input {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: auto;
+      margin-top: 2%;
+      height: auto;
+    }
+  }
+
   label {
     ${inputField};
   }
 
   button {
     ${button};
+    width: 10%;
+    margin: 2% 0% 10%;
   }
 
   a {
@@ -31,6 +44,7 @@ const SignUpPageStyles = styled.div`
 
     button {
       ${button};
+      width: 100%;
     }
   }
 `

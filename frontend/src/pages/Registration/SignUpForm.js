@@ -46,7 +46,7 @@ function SignUpForm(props) {
             type="password"
           />
         </label>
-        <label>
+        <label className="terms-input">
           Terms and Conditions{" "}
           <input
             value={values.terms}
