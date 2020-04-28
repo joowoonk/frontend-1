@@ -16,3 +16,21 @@ export const button = css`
     background-color: ${fadedBlack};
   }
 `
+export const inputField = css`
+    color: ${aqua};
+    font-family: Bangers, cursive;
+    font-size: 2rem;
+    margin: 2%;
+    width: 40%;
+
+    input {
+      color: black;
+      font-size: 1rem;
+      text-align: center;
+      height: 3vh;
+      border-color: black;
+      border-radius: 5px;
+      width: 100%;
+      outline: none;
+    }
+`

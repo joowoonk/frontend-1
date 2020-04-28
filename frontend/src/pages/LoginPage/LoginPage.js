@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import LoginPageStyles from "./LoginPageStyles.jsx";
 import { Link } from "react-router-dom";
+import LoginPageStyles from "./LoginPageStyles.jsx";
 
 import * as yup from "yup";
 

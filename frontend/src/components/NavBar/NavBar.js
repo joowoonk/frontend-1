@@ -2,7 +2,7 @@ import React from "react";
 import NavStyles from "./NavStyles.jsx";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const NavBar = () => {
   return (
     <NavStyles>
       <h1 className="logo">DEEPTUNES</h1>
@@ -14,4 +14,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default NavBar;
