@@ -32,7 +32,6 @@ function SignUpForm(props) {
 			<button onClick={handleSubmit} name='submit'>Create Account</button>
 		</form>
 	);
-
 }
 
 export default SignUpForm;
