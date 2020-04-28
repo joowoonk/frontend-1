@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fadedBlack, aqua } from "../../components/styles/ComponentStyleConstants";
+import { aqua, button } from "../../components/styles/ComponentStyleConstants";
 
 const LoginPageStyles = styled.div`
   display: flex;
@@ -35,17 +35,10 @@ const LoginPageStyles = styled.div`
     }
 
     button {
-      font-size: 1rem;
-      border-color: black;
-      border-radius: 5px;
+      ${button}
       width: 10%;
-      margin-bottom: 10%;
-      outline: none;
+      margin: 2% 0% 10%;
 
-      &:hover {
-        cursor: pointer;
-        color: white;
-        background-color: ${fadedBlack};
       }
     }
   }
@@ -56,17 +49,8 @@ const LoginPageStyles = styled.div`
     margin-bottom: 20%;
 
     button {
+      ${button}
       width: 100%;
-      font-size: 1rem;
-      border-color: black;
-      border-radius: 5px;
-      outline: none;
-
-      &:hover {
-        cursor: pointer;
-        color: white;
-        background-color: ${fadedBlack};
-      }
     }
   }
 `
