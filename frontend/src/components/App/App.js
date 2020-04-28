@@ -10,13 +10,6 @@ function App() {
 	return (
 		<div>
 			<Switch>
-
-				<Route exact path='/'>
-					<Link to='/login'>
-						<button>Login</button>
-					</Link>
-				</Route>
-
 				<Route path='/login'>
 					<LoginPage />
 				</Route>
