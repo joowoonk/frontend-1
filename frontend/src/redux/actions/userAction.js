@@ -25,11 +25,11 @@ export const postLogin = () => {
   };
 };
 
-export const postUserAction = (song) => {
+export const postUserAction = (user) => {
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });
     axiosWithAuth()
-      .post(`http://localhost:3333/s`, song)
+      .post(`http://localhost:3333/`, user)
       .then((res) => {
         dispatch({ type: POST_USER_SUCCESS, payload: res.data });
       })

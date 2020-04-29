@@ -12,7 +12,7 @@ const initialState = {
   song: [],
   error: "",
   chosen: false,
-  addingSong: { song: [], id: "" },
+  addingSong: { song: [{ id: "" }] },
 };
 
 export const songsReducer = (state = initialState, action) => {

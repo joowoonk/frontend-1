@@ -26,21 +26,21 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
       };
-    case FETCH_USER_SUCCESS:
-      return {
-        ...state,
-        song: [...action.payload],
-        error: "",
-      };
-    case FETCH_USER_FAILURE:
-      return {
-        ...state,
-        err: action.payload,
-      };
+    // case FETCH_USER_SUCCESS:
+    //   return {
+    //     ...state,
+    //     song: [...action.payload],
+    //     error: "",
+    //   };
+    // case FETCH_USER_FAILURE:
+    //   return {
+    //     ...state,
+    //     err: action.payload,
+    //   };
     case POST_USER_SUCCESS:
       return {
         ...state,
-        addingSong: [action.payload],
+        user: [action.payload],
       };
     case POST_USER_FAILURE:
       return {

@@ -5,6 +5,8 @@ import PlayListStyles from "./PlayListStyles.jsx";
 
 const PlayList = (props) => {
   // console.log("PlayList", props);
+  //10, 20, 50 being listed for the songs
+
   return (
     <>
       <PlayListStyles>
