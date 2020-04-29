@@ -10,9 +10,7 @@ const PlayList = (props) => {
       <div className="trackBox">
         {props.song.map((track) => {
           return (
-            <div>
-              <Play key={track.id} track={track} />
-            </div>
+            <Play key={track.id} track={track} />
           );
         })}
       </div>

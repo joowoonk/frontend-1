@@ -1,15 +1,16 @@
 import React from "react";
-import "./SearchBox.styles.scss";
+// import "./SearchBox.styles.scss";
+import SearchBoxStyles from "./SearchBoxStyles.jsx";
 
 const SearchBox = ({ placeholder, searchField, handleChange }) => (
-  <div className="searchBox">
+  <SearchBoxStyles>
     <input
       type="search"
       placeholder={placeholder}
       // value={searchField}
       onChange={handleChange}
     />
-  </div>
+  </SearchBoxStyles>
 );
 
 export default SearchBox;
