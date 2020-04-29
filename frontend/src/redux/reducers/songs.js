@@ -12,11 +12,7 @@ const initialState = {
   song: [],
   error: "",
   chosen: false,
-  addingSong: [
-    {
-      id: "",
-    },
-  ],
+  addingSong: { song: [], id: "" },
 };
 
 export const songsReducer = (state = initialState, action) => {
@@ -41,8 +37,8 @@ export const songsReducer = (state = initialState, action) => {
       return {
         ...state,
         // song: action.payload,
-        chosen: !state.chosen,
-        addingSong: [action.payload],
+        // chosen: !state.chosen,
+        addingSong: { song: [action.payload] },
         error: "",
       };
     case CHOOSE_SONG_FAILURE:

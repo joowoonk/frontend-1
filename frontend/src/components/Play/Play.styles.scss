@@ -1,6 +1,7 @@
 .trackList {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  // flex-direction: column;
   text-align: left;
   margin: 0;
   border: 2px solid rgba(0, 15, 15, 0.7);
