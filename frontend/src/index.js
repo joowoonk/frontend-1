@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import { Provider } from "react-redux";
-import store from "./redux/createStore";
+import { createStore, applyMiddleware } from "redux";
+import combineReducers from "./redux/reducers/index";
+import { songsReducer } from "./redux/reducers/songs";
+import thunk from "redux-thunk";
 import App from "./components/App/App.js";
 import * as serviceWorker from "./serviceWorker";
 
-// const store = createStore();
+const store = createStore(combineReducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,7 +18,6 @@ ReactDOM.render(
       <App />
     </Router>
   </Provider>,
-
   document.getElementById("root")
 );
 

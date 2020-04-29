@@ -114,7 +114,7 @@ function SignUpPage() {
         })
         .then((res) => {
           console.log("testing", { res });
-          push("/preference");
+          push("/login");
         })
         .catch((err) => console.log(err, "ERROR TO SIGN UP"));
     } else {

@@ -9,6 +9,7 @@ import "./App.css";
 import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
 import UserPlaylist from "../UserPlaylist/UserPlaylist.js";
 import HomePage from "../../pages/HomePage.js";
+import Preference from "../Preference/Preference.js";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <SignUpPage />
         </Route>
         <PrivateRoute path="/usersonglist" component={UserPlaylist} />
+        <PrivateRoute path="/preference" component={Preference} />
       </Switch>
     </div>
   );

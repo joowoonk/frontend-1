@@ -60,7 +60,7 @@ function LoginPage() {
       .post("/auth/login", formValues)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        push("/usersonglist");
+        push("/preference");
       });
   };
 
