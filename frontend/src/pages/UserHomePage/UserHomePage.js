@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserPlaylist = () => {
+const UserHomePage = () => {
   return (
     <div>
       <h1>Logged In Successfully</h1>
@@ -8,4 +8,4 @@ const UserPlaylist = () => {
   );
 };
 
-export default UserPlaylist;
+export default UserHomePage;
