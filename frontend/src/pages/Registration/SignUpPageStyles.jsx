@@ -44,6 +44,7 @@ const SignUpPageStyles = styled.div`
 
     button {
       ${button};
+      margin: 0;
       width: 100%;
     }
   }
