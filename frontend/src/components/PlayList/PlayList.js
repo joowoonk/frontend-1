@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Play from "../Play/Play";
 
-// import "./PlayList.styles.scss";
 import PlayListStyles from "./PlayListStyles.jsx";
 
 const PlayList = (props) => {
