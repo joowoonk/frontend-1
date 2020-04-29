@@ -32,9 +32,24 @@ function App() {
           <NavBar />
           <SignUpPage />
         </Route>
-        <PrivateRoute path="/userhomepage" component={UserHomePage} />
+
+        <PrivateRoute path="/userhomepage">
+          <NavBar />
+          <UserHomePage />
+        </PrivateRoute>
+
+        <PrivateRoute path="/preference">
+          <NavBar />
+          <Preference />
+        </PrivateRoute>
+
+        <PrivateRoute path="/addnewsongs">
+          <NavBar />
+          <AddNewSongs />
+        </PrivateRoute>
+        {/* <PrivateRoute path="/userhomepage" component={UserHomePage} />
         <PrivateRoute path="/preference" component={Preference} />
-        <PrivateRoute path="/addnewsongs" component={AddNewSongs} />
+        <PrivateRoute path="/addnewsongs" component={AddNewSongs} /> */}
       </Switch>
     </div>
   );
