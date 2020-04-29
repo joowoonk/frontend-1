@@ -7,7 +7,7 @@ import SignUpPage from "../../pages/Registration/SignUpPage";
 
 import "./App.css";
 import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
-import UserPlaylist from "../UserPlaylist/UserPlaylist.js";
+import UserHomePage from "../../pages/UserHomePage/UserHomePage.js";
 import HomePage from "../../pages/HomePage.js";
 import Preference from "../Preference/Preference.js";
 
@@ -30,8 +30,9 @@ function App() {
         <Route path="/signup">
           <SignUpPage />
         </Route>
-        <PrivateRoute path="/usersonglist" component={UserPlaylist} />
+        <PrivateRoute path="/userhomepage" component={UserHomePage} />
         <PrivateRoute path="/preference" component={Preference} />
+        {/* <PrivateRoute path="/add_songs" component={AddSongs} /> */}
       </Switch>
     </div>
   );
