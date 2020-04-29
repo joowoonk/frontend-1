@@ -11,7 +11,7 @@ export const songAction = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_SONG_START });
     axiosWithAuth()
-      .get(`/songs`)
+      .get(`/songs/list`)
       .then((res) => {
         dispatch({ type: FETCH_SONG_SUCCESS, payload: res.data });
       })
@@ -24,19 +24,19 @@ export const songAction = () => {
   };
 };
 
-// export const postSongAction = (song) => {
-//   return (dispatch) => {
-//     dispatch({ type: FETCH_SONG_START });
-//     axios
-//       .post(`http://localhost:3333/s`, song)
-//       .then((res) => {
-//         dispatch({ type: POST_SONG_SUCCESS, payload: res.data });
-//       })
-//       .catch((err) => {
-//         dispatch({
-//           type: POST_SONG_FAILURE,
-//           payload: err,
-//         });
-//       });
-//   };
-// };
+export const postSongAction = (song) => {
+  return (dispatch) => {
+    dispatch({ type: FETCH_SONG_START });
+    axiosWithAuth()
+      .post(`/songs`, song)
+      .then((res) => {
+        dispatch({ type: CHOOSE_SONG_SUCCESS, payload: res.data });
+      })
+      .catch((err) => {
+        dispatch({
+          type: CHOOSE_SONG_FAILURE,
+          payload: err,
+        });
+      });
+  };
+};

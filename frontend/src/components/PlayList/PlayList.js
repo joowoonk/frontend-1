@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Play from "../Play/Play";
 
+import "./PlayList.styles.scss";
+
 const PlayList = (props) => {
-  console.log("PlayList", props);
+  // console.log("PlayList", props);
   return (
     <>
-      <div className="trackList">
+      <div className="trackBox">
         {props.song.map((track) => {
           return (
             <div>

@@ -42,6 +42,7 @@ export const songsReducer = (state = initialState, action) => {
         ...state,
         // song: action.payload,
         chosen: !state.chosen,
+        addingSong: [action.payload],
         error: "",
       };
     case CHOOSE_SONG_FAILURE:
