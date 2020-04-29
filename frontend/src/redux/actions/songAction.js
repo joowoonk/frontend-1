@@ -28,7 +28,7 @@ export const postSongAction = (song) => {
   return (dispatch) => {
     dispatch({ type: FETCH_SONG_START });
     axiosWithAuth()
-      .post(`/songs`, song)
+      .post(`/songs/liked`, song)
       .then((res) => {
         dispatch({ type: CHOOSE_SONG_SUCCESS, payload: res.data });
       })
