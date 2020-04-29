@@ -14,6 +14,7 @@ export const button = css`
     cursor: pointer;
     color: white;
     background-color: ${fadedBlack};
+    border-color: white;
   }
 `
 export const inputField = css`
