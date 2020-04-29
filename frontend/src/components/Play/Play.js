@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Play.styles.scss";
 import PlayStyles from "./PlayStyles.jsx";
 const Play = (props) => {
   return (
