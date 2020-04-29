@@ -8,13 +8,15 @@ const PlayList = (props) => {
   return (
     <>
       <div className="trackBox">
-        {props.song.map((track) => {
-          return (
-            <div>
-              <Play key={track.id} track={track} />
-            </div>
-          );
-        })}
+        {props.song
+          .filter((item, idx) => idx < 10)
+          .map((track) => {
+            return (
+              <div>
+                <Play key={track.id} track={track} />
+              </div>
+            );
+          })}
       </div>
     </>
   );
