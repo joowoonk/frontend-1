@@ -6,21 +6,20 @@ import NavStyles from "./NavStyles.jsx";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  console.log({ localStorage });
   const token = localStorage.getItem("token");
+  const [local, setLocal] = useState(localStorage);
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
     dispatch(logOut());
   };
-  console.log({ token });
 
   return (
     <NavStyles>
       <h1 className="logo">DEEPTUNES</h1>
       <div className="menuNav">
         <Link to="/">Home</Link>
-        {token ? (
+        {localStorage.token ? (
           <Link to="/" onClick={handleLogOut}>
             Log Out
           </Link>
