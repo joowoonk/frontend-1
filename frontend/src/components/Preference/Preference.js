@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { songAction } from "../../redux/actions/songAction";
 
-// import "./Preference.styles.scss";
 import PreferenceStyles from "./PreferenceStyles.jsx";
 
 import PlayList from "../PlayList/PlayList";
@@ -38,7 +37,7 @@ const Preference = () => {
         searchField={searchField}
       />
       <AddedSong />
-      <PlayList song={filteredMusic} />;
+      <PlayList song={filteredMusic} />
     </PreferenceStyles>
   );
 };
