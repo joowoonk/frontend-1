@@ -14,9 +14,7 @@ const PlayList = (props) => {
           .filter((item, idx) => idx < 10)
           .map((track) => {
             return (
-              <div>
-                <Play key={track.id} track={track} />
-              </div>
+              <Play key={track.id} track={track} />
             );
           })}
       </div>

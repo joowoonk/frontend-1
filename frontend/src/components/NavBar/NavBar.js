@@ -13,6 +13,7 @@ const NavBar = () => {
   const handleLogOut = () => {
     dispatch(logOut());
   };
+  console.log({ token });
 
   return (
     <NavStyles>
