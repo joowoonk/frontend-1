@@ -19,6 +19,14 @@ const NavBar = () => {
       <h1 className="logo">DEEPTUNES</h1>
       <div className="menuNav">
         <Link to="/">Home</Link>
+        {/* {token ? (
+          <Link to="/addnewsongs">
+            Add Songs
+          </Link>
+        ) : (
+          <>
+          </>
+        )} */}
         {token ? (
           <Link to="/" onClick={handleLogOut}>
             Log Out
