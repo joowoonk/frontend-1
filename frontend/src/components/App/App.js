@@ -16,29 +16,27 @@ import AddNewSongs from "../AddNewSongs/AddNewSongs.js"
 
 function App() {
   return (
-    <AppStyles>
-      <Route path="/">
-        <NavBar />
-        {/* <img className="background-img" src={img}/> */}
-      </Route>
-
+    <div>
       <Switch>
         <Route exact path="/">
+          <NavBar />
           <HomePage />
         </Route>
 
         <Route path="/login">
+          <NavBar />
           <LoginPage />
         </Route>
 
         <Route path="/signup">
+          <NavBar />
           <SignUpPage />
         </Route>
         <PrivateRoute path="/userhomepage" component={UserHomePage} />
         <PrivateRoute path="/preference" component={Preference} />
         <PrivateRoute path="/addnewsongs" component={AddNewSongs} />
       </Switch>
-    </AppStyles>
+    </div>
   );
 }
 

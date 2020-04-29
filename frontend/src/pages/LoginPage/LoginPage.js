@@ -5,6 +5,9 @@ import LoginPageStyles from "./LoginPageStyles.jsx";
 import * as yup from "yup";
 
 import LoginForm from "./LoginForm.js";
+import { postUserAction } from "../../redux/actions/userAction";
+import { useDispatch } from "react-redux";
+
 import { axiosWithAuth } from "../../utils/axiosWithAuth.js";
 import { useHistory } from "react-router-dom";
 
@@ -27,6 +30,7 @@ function LoginPage() {
   const [formValues, setFormValues] = useState(initFormValues);
   const [formErrors, setFormErrors] = useState(initFormErrors);
   const { push } = useHistory();
+  const dispatch = useDispatch();
 
   const onInputChange = (evt) => {
     const name = evt.target.name;
@@ -62,6 +66,7 @@ function LoginPage() {
         localStorage.setItem("token", res.data.token);
         push("/preference");
       });
+    dispatch(postUserAction(formValues));
   };
 
   return (

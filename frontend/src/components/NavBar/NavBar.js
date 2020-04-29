@@ -6,8 +6,8 @@ import NavStyles from "./NavStyles.jsx";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  console.log({ localStorage });
   const token = localStorage.getItem("token");
+  const [local, setLocal] = useState(localStorage);
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
@@ -19,15 +19,7 @@ const NavBar = () => {
       <h1 className="logo">DEEPTUNES</h1>
       <div className="menuNav">
         <Link to="/">Home</Link>
-        {/* {token ? (
-          <Link to="/addnewsongs">
-            Add Songs
-          </Link>
-        ) : (
-          <>
-          </>
-        )} */}
-        {token ? (
+        {localStorage.token ? (
           <Link to="/" onClick={handleLogOut}>
             Log Out
           </Link>
