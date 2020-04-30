@@ -12,7 +12,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
 import UserHomePage from "../../pages/UserHomePage/UserHomePage.js";
 import HomePage from "../../pages/HomePage.js";
 import Preference from "../Preference/Preference.js";
-import AddNewSongs from "../AddNewSongs/AddNewSongs.js"
+import AddNewSongs from "../../pages/AddNewSongs/AddNewSongs.js"
 
 function App() {
   return (

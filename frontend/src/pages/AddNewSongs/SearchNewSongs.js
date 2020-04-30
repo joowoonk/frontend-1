@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { songAction } from "../../redux/actions/songAction";
 
-import AddNewSongsStyles from "./AddNewSongsStyles.jsx";
+import SearchBox from "../../components/SearchBox/SearchBox.js";
+import SongList from "./SongList.js";
 
-import SearchBox from "../SearchBox/SearchBox.js";
-import Play from "../Play/Play.js";
-
-function AddNewSongs() {
+function SearchNewSongs() {
   const [searchField, setSearchField] = useState("");
   const song = useSelector((state) => state.songsReducer.song);
   const dispatch = useDispatch();
@@ -25,15 +23,11 @@ function AddNewSongs() {
   }
 
   return (
-    <AddNewSongsStyles>
+    <div>
       <SearchBox placeholder="Search By Track Name" handleChange={handleChange}/>
-      {
-        filteredSongs.map(song => {
-          return <Play song={song}/>
-        })
-      }
-    </AddNewSongsStyles>
+      <SongList filteredSongs={filteredSongs}/>
+    </div>
   );
 }
 
-export default AddNewSongs;
+export default SearchNewSongs;
