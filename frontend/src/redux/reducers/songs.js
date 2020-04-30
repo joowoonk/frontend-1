@@ -6,6 +6,12 @@ import {
   FETCH_SONG_FAILURE,
   CHOOSE_SONG_SUCCESS,
   CHOOSE_SONG_FAILURE,
+  DELETE_SONG_SUCCESS,
+  DELETE_SONG_FAILURE,
+  ADDING_FAV_SONG_SUCCESS,
+  ADDING_FAV_SONG_FAILURE,
+  RECOMMEND_SONG_SUCCESS,
+  RECOMMEND_SONG_FAILURE,
 } from "../actions/songAction";
 
 const initialState = {
@@ -13,6 +19,7 @@ const initialState = {
   error: "",
   chosen: false,
   addingSong: { song: [{ id: "" }] },
+  recommenedSongs: [],
 };
 
 export const songsReducer = (state = initialState, action) => {
@@ -38,7 +45,7 @@ export const songsReducer = (state = initialState, action) => {
         ...state,
         // song: action.payload,
         // chosen: !state.chosen,
-        addingSong: { song: [action.payload] },
+        addingSong: action.payload,
         error: "",
       };
     case CHOOSE_SONG_FAILURE:
@@ -46,16 +53,36 @@ export const songsReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
       };
-    // case "POST_SONG_SUCCESS":
-    //   return {
-    //     ...state,
-    //     addingSong: [action.payload],
-    //   };
-    // case "POST_SONG_FAILURE":
-    //   return {
-    //     ...state,
-    //     error: action.payload,
-    //   };
+    case DELETE_SONG_SUCCESS:
+      return {
+        ...state,
+        song: action.payload,
+      };
+    case DELETE_SONG_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    case ADDING_FAV_SONG_SUCCESS:
+      return {
+        ...state,
+        favSongs: [...state.song, state.addingSong, action.payload],
+      };
+    case ADDING_FAV_SONG_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    case RECOMMEND_SONG_SUCCESS:
+      return {
+        ...state,
+        recommenedSongs: action.payload,
+      };
+    case RECOMMEND_SONG_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
     default:
       return state;
   }

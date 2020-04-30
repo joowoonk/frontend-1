@@ -11,26 +11,6 @@ export const POST_USER_FAILURE = "POST_USER_FAILURE";
 
 export const LOGOUT = "LOGOUT";
 
-// export const postLogin = (user) => {
-//   return (dispatch) => {
-//     dispatch({ type: FETCH_USER_START });
-//     axiosWithAuth()
-//       .post("/auth/login", user)
-//       .then((res) => {
-//         localStorage.setItem("token", res.data.token);
-//         dispatch({
-//           type: FETCH_USER_SUCCESS,
-//         });
-//       })
-//       .catch((err) => {
-//         dispatch({
-//           type: FETCH_USER_FAILURE,
-//           payload: err,
-//         });
-//       });
-//   };
-// };
-
 export const postUserAction = (username, password) => {
   console.log(username, password);
   return (dispatch) => {
