@@ -62,9 +62,10 @@ function LoginPage() {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         push("/songs");
-        if (!localStorage.token) {
-          alert("This account doesn't exist!");
-        }
+      })
+      .catch((err) => {
+        alert("This account doesn't exist!");
+        return console.log(err);
       });
   };
 

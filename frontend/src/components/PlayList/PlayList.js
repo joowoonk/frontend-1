@@ -1,5 +1,6 @@
 import React from "react";
 import Play from "../Play/Play";
+// import Chart from "../Chart/Chart";
 
 import PlayListStyles from "./PlayListStyles.jsx";
 import { useSelector, useDispatch } from "react-redux";
@@ -17,7 +18,10 @@ const PlayList = (props) => {
   const songState = useSelector((state) => {
     return state.songsReducer.recommenedSongs.recommendedSongs;
   });
-  // console.log({ songState });
+  const visiualization = useSelector((state) => {
+    return state.songsReducer.recommenedSongs;
+  });
+  console.log({ songState, visiualization });
 
   return (
     <>
@@ -35,28 +39,30 @@ const PlayList = (props) => {
         </PlayListStyles>
       ) : (
         <>
-          {" "}
           {songState.map((track) => {
             return (
-              <PlayListStyles>
-                {/* {" "} */}
-                <h2>{track.track_name}</h2>
-                <h2>Artist - {track.artist_name}</h2>
-                <div>
-                  <button
-                    onClick={() =>
-                      dispatch(recommendSongAction(track.track_key))
-                    }
-                  >
-                    Similar Songs?
-                  </button>
-                  <button
-                    onClick={() => dispatch(favoriteSongAction(track.id))}
-                  >
-                    Save Song
-                  </button>
-                </div>
-              </PlayListStyles>
+              <div key={track.id}>
+                {/* <Chart /> */}
+                <PlayListStyles>
+                  {/* {" "} */}
+                  <h2>{track.track_name}</h2>
+                  <h2>Artist - {track.artist_name}</h2>
+                  <div>
+                    <button
+                      onClick={() =>
+                        dispatch(recommendSongAction(track.track_key))
+                      }
+                    >
+                      Similar Songs?
+                    </button>
+                    <button
+                      onClick={() => dispatch(favoriteSongAction(track.id))}
+                    >
+                      Save Song
+                    </button>
+                  </div>
+                </PlayListStyles>
+              </div>
             );
           })}{" "}
         </>
