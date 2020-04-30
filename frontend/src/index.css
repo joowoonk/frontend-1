@@ -15,6 +15,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: rgba(0, 0, 0, 0.5);
 	background-image: url("./assets/DeepTunes-background.jpg");
+	background-attachment: fixed;
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;

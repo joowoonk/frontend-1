@@ -8,21 +8,19 @@ const PlayList = (props) => {
   //10, 20, 50 being listed for the songs
 
   return (
-    <>
-      <PlayListStyles>
-        {/* <div className="info">
-          <h2>Song Name</h2>
-          <h2>Artist</h2>
-        </div> */}
-        {props.song
-          .filter((item, idx) => idx < 10)
-          .map((track) => {
-            return (
-              <Play key={track.id} track={track} />
-            );
-          })}
-      </PlayListStyles>
-    </>
+    <PlayListStyles>
+      {/* <div className="info">
+        <h2>Song Name</h2>
+        <h2>Artist</h2>
+      </div> */}
+      {props.song
+        .filter((item, idx) => idx < 10)
+        .map((track) => {
+          return (
+            <Play key={track.id} track={track} />
+          );
+        })}
+    </PlayListStyles>
   );
 };
 

@@ -6,32 +6,65 @@ export const aqua = "#7fffd4";
 export const bangers = "Bangers, cursive";
 export const button = css`
   font-size: 1rem;
+  ${'' /* border-color: ${aqua}; */}
   border-color: black;
   border-radius: 5px;
   outline: none;
+  background-color: white;
+  color: black;
+  height: 6vh;
 
   &:hover {
     cursor: pointer;
     color: white;
     background-color: ${fadedBlack};
-    border-color: white;
+    border-color: ${aqua};
   }
 `
 export const inputField = css`
     color: ${aqua};
-    font-family: Bangers, cursive;
+    font-family: ${bangers};
+    letter-spacing: 0.3rem;
     font-size: 2rem;
     margin: 2%;
-    width: 40%;
+    width: 60%;
+    border: 3px solid ${aqua};
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 2%;
+
+    p {
+      font-size: 0.8rem;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    }
 
     input {
-      color: black;
-      font-size: 1rem;
+      color: white;
+      font-size: 1.5rem;
       text-align: center;
       height: 3vh;
-      border-color: black;
+      border-color: white;
       border-radius: 5px;
       width: 100%;
       outline: none;
+      background-color: black;
+      border: 2px solid white;
+      padding: 4%;
     }
+`
+export const songList = css`
+  width: 80%;
+  margin: 0 auto;
+`
+export const songInfo = css`
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  border: 2px solid ${aqua};
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 2%;
+  margin-bottom: 2%;
 `

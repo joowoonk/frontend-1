@@ -22,7 +22,8 @@ const LoginPageStyles = styled.div`
     button {
       ${button};
       width: 10%;
-      margin: 2% 0% 10%;
+      margin: 2% 0% 8%;
+      height: 6vh;
 
       }
     }
