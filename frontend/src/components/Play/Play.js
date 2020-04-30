@@ -2,22 +2,33 @@ import React from "react";
 import PlayStyles from "./PlayStyles.jsx";
 
 import { useSelector, useDispatch } from "react-redux";
-import { favoriteSongAction } from "../../redux/actions/songAction";
+import {
+  favoriteSongAction,
+  recommendSongAction,
+} from "../../redux/actions/songAction";
+
+import { useHistory } from "react-router-dom";
 
 const Play = (props) => {
+  const { push } = useHistory();
+
   const dispatch = useDispatch();
 
   const saveMusic = () => {
-    dispatch(favoriteSongAction(props.track.track_id));
-    console.log(props.track.track_id);
+    dispatch(favoriteSongAction(props.track.id));
+    // console.log(props.track.id);
   };
 
+  const recommendSong = () => {
+    dispatch(recommendSongAction(props.track.track_key));
+    // push("/recommend");
+  };
   return (
     <PlayStyles>
       <h2>{props.track.track_name}</h2>
       <h2>Artist - {props.track.artist_name}</h2>
       <div>
-        <button>Similar Songs?</button>
+        <button onClick={() => recommendSong()}>Similar Songs?</button>
         <button onClick={() => saveMusic()}>Save Song</button>
       </div>
     </PlayStyles>
