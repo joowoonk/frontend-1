@@ -56,7 +56,7 @@ export const songsReducer = (state = initialState, action) => {
     case ADDING_FAV_SONG_SUCCESS:
       return {
         ...state,
-        favSongs: [action.payload],
+        favSongs: [...action.payload],
       };
     case ADDING_FAV_SONG_FAILURE:
       return {
