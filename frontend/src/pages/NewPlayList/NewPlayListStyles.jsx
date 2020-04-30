@@ -6,15 +6,10 @@ const NewPlayListStyles = styled.div`
 
   .song-card {
     ${songInfo};
-
-    h2 {
-      width: 30%;
-    }
   }
 
   .buttons {
     ${button};
-    width: 10%;
   }
 `
 

@@ -13,6 +13,7 @@ export const button = css`
   background-color: white;
   color: black;
   height: 6vh;
+  width: 15%;
 
   &:hover {
     cursor: pointer;
@@ -71,5 +72,6 @@ export const songInfo = css`
 
   h2 {
     padding: 2%;
+    width: 30%;
   }
 `
