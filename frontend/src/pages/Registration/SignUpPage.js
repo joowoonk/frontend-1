@@ -118,7 +118,7 @@ function SignUpPage() {
         })
         .catch((err) => console.log(err, "ERROR TO SIGN UP"));
     } else {
-      return <div>Not Working</div>;
+      alert("You have not met requirements");
     }
     // console.log("not working");
   };
