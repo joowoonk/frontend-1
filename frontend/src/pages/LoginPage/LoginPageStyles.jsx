@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { button, inputField } from "../../components/styles/ComponentStyleConstants";
+import { button, inputField, accountForm } from "../../components/styles/ComponentStyleConstants";
 
 const LoginPageStyles = styled.div`
-  display: flex;
+  ${accountForm};
+
+  ${'' /* display: flex;
   flex-direction: column;
 
   .login-form {
@@ -13,7 +15,7 @@ const LoginPageStyles = styled.div`
 
     .username-input {
       margin-top: 10%;
-    }
+    } */}
 
     label {
       ${inputField};
