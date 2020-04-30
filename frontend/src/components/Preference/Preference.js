@@ -12,7 +12,7 @@ const Preference = () => {
   const [searchField, setSearchField] = useState("");
   const song = useSelector((state) => state.songsReducer.song);
   const dispatch = useDispatch();
-
+  // const changed = useSelector((state) => console.log(state));
   // console.log({ searchField });
 
   useEffect(() => {
@@ -31,13 +31,12 @@ const Preference = () => {
 
   return (
     <PreferenceStyles>
-      <SearchBox
-        placeholder="Search By Track Name"
+      {/* <AddedSong /> */}
+      <PlayList
+        song={filteredMusic}
         handleChange={handleChange}
         searchField={searchField}
       />
-      {/* <AddedSong /> */}
-      <PlayList song={filteredMusic} />
     </PreferenceStyles>
   );
 };

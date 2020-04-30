@@ -5,6 +5,7 @@ import Play from "../Play/Play";
 import PlayListStyles from "./PlayListStyles.jsx";
 import PlayStyles from "../Play/PlayStyles.jsx";
 import { useSelector, useDispatch } from "react-redux";
+import SearchBox from "../SearchBox/SearchBox";
 
 import { useHistory } from "react-router-dom";
 
@@ -43,6 +44,11 @@ const PlayList = (props) => {
         <h2>Song Name</h 2>
         <h2>Artist</h2>
       </div> */}
+          <SearchBox
+            placeholder="Search By Track Name"
+            handleChange={props.handleChange}
+            searchField={props.searchField}
+          />
           {props.song
             .filter((item, idx) => idx < 10)
             .map((track) => {
@@ -51,7 +57,6 @@ const PlayList = (props) => {
         </PlayListStyles>
       ) : (
         <PlayListStyles>
-          {" "}
           <div className="chart">
             <div className="graph">
               <Chart visiualization={visiualization} />
@@ -62,6 +67,7 @@ const PlayList = (props) => {
               attributes, click this description box.
             </p>
           </div>
+          <h4>Here are the 10 Similar Songs</h4>
           {songState.map((track) => {
             return (
               <PlayStyles key={track.id}>

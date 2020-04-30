@@ -51,6 +51,9 @@ const Chart = (props) => {
 
           showlegend: false,
         }}
+        marker={{
+          color: "rgb(0, 0, 0,0)",
+        }}
       />
     </>
   );
