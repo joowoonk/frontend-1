@@ -40,19 +40,6 @@ export const songsReducer = (state = initialState, action) => {
         ...state,
         err: action.payload,
       };
-    // case CHOOSE_SONG_SUCCESS:
-    //   return {
-    //     ...state,
-    //     // song: action.payload,
-    //     // chosen: !state.chosen,
-    //     addingSong: action.payload,
-    //     error: "",
-    //   };
-    // case CHOOSE_SONG_FAILURE:
-    //   return {
-    //     ...state,
-    //     error: action.payload,
-    //   };.
     case ADDING_FAV_SONG_SUCCESS:
       return {
         ...state,
@@ -64,9 +51,10 @@ export const songsReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case DELETE_SONG_SUCCESS:
+      console.log("delete", action.payload);
       return {
         ...state,
-        song: action.payload,
+        favSongs: [action.payload],
       };
     case DELETE_SONG_FAILURE:
       return {
