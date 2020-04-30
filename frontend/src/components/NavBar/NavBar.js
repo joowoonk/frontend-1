@@ -25,7 +25,7 @@ const NavBar = () => {
     <NavStyles>
       <h1 className="logo">DEEPTUNES</h1>
       <div className="menuNav">
-        <Link to="/">Home</Link>
+        <a href="https://jdmtias.github.io/marketing/">Home</a>
         {localStorage.token ? (
           <>
             {songState ? (
