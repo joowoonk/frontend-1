@@ -16,6 +16,7 @@ import AddNewSongs from "../../pages/AddNewSongs/AddNewSongs.js";
 import NewPlayList from "../../pages/NewPlayList/NewPlayList";
 
 import AccountPage from "../../pages/AccountPage/AccountPage";
+import SimilarSongs from "../../pages/SimilarSongs/SimilarSongs.js";
 
 function App() {
   return (
@@ -53,6 +54,10 @@ function App() {
         <PrivateRoute path="/playlist">
           <NavBar />
           <NewPlayList />
+        </PrivateRoute>
+        <PrivateRoute exact path="/recommend">
+          <NavBar />
+          <SimilarSongs />
         </PrivateRoute>
       </Switch>
     </div>

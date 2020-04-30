@@ -7,7 +7,11 @@ import {
   recommendSongAction,
 } from "../../redux/actions/songAction";
 
+import { useHistory } from "react-router-dom";
+
 const Play = (props) => {
+  const { push } = useHistory();
+
   const dispatch = useDispatch();
 
   const saveMusic = () => {
@@ -17,6 +21,7 @@ const Play = (props) => {
 
   const recommendSong = () => {
     dispatch(recommendSongAction(props.track.track_key));
+    // push("/recommend");
   };
   return (
     <PlayStyles>
