@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteSongAction } from "../../redux/actions/songAction";
 import { favoriteSongAction } from "../../redux/actions/songAction";
@@ -8,10 +8,12 @@ import { favoriteSongAction } from "../../redux/actions/songAction";
 const NewPlayList = () => {
   const playList = useSelector((state) => state.songsReducer.favSongs);
   const dispatch = useDispatch();
-  // console.log({ playList });
+  const [newSongs, setNewSongs] = useState(playList);
+  console.log({ newSongs });
   useEffect(() => {
+    setNewSongs(playList);
     dispatch(favoriteSongAction());
-  }, []);
+  }, [newSongs]);
   return (
     <div>
       {!playList ? (

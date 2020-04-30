@@ -17,7 +17,10 @@ const PlayList = (props) => {
   const songState = useSelector((state) => {
     return state.songsReducer.recommenedSongs.recommendedSongs;
   });
-  // console.log({ songState });
+  const visiualization = useSelector((state) => {
+    return state.songsReducer.recommenedSongs;
+  });
+  console.log({ songState, visiualization });
 
   return (
     <>
@@ -35,7 +38,6 @@ const PlayList = (props) => {
         </PlayListStyles>
       ) : (
         <>
-          {" "}
           {songState.map((track) => {
             return (
               <PlayListStyles>

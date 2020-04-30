@@ -65,11 +65,13 @@ export const favoriteSongAction = (track_id) => {
 export const deleteSongAction = (track_id) => {
   //deleting a song so adding to the suggested list
   //remember to pass id
+  // console.log({ track_id });
   return (dispatch) => {
     dispatch({ type: FETCH_SONG_START });
     axiosWithAuth()
-      .delete(`/songs/liked`, track_id)
+      .delete(`/songs/liked`, { data: { track_id } })
       .then((res) => {
+        console.log({ res });
         dispatch({ type: DELETE_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {
