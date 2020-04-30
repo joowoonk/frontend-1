@@ -13,6 +13,7 @@ import UserHomePage from "../../pages/UserHomePage/UserHomePage.js";
 import HomePage from "../../pages/HomePage.js";
 import Preference from "../Preference/Preference.js";
 import AddNewSongs from "../../pages/AddNewSongs/AddNewSongs.js";
+import NewPlayList from "../../pages/NewPlayList/NewPlayList";
 
 import AccountPage from "../../pages/AccountPage/AccountPage";
 
@@ -40,7 +41,7 @@ function App() {
           <UserHomePage />
         </PrivateRoute>
 
-        <PrivateRoute path="/preference">
+        <PrivateRoute path="/songs">
           <NavBar />
           <Preference />
         </PrivateRoute>
@@ -49,13 +50,10 @@ function App() {
           <NavBar />
           <AccountPage />
         </Route>
-        <PrivateRoute path="/addnewsongs">
+        <PrivateRoute path="/playlist">
           <NavBar />
-          <AddNewSongs />
+          <NewPlayList />
         </PrivateRoute>
-        {/* <PrivateRoute path="/userhomepage" component={UserHomePage} />
-        <PrivateRoute path="/preference" component={Preference} />
-        <PrivateRoute path="/addnewsongs" component={AddNewSongs} /> */}
       </Switch>
     </div>
   );

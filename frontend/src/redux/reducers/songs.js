@@ -18,7 +18,7 @@ const initialState = {
   song: [],
   error: "",
   chosen: false,
-  addingSong: { song: [{ id: "" }] },
+  favSongs: [],
   recommenedSongs: [],
 };
 
@@ -40,15 +40,25 @@ export const songsReducer = (state = initialState, action) => {
         ...state,
         err: action.payload,
       };
-    case CHOOSE_SONG_SUCCESS:
+    // case CHOOSE_SONG_SUCCESS:
+    //   return {
+    //     ...state,
+    //     // song: action.payload,
+    //     // chosen: !state.chosen,
+    //     addingSong: action.payload,
+    //     error: "",
+    //   };
+    // case CHOOSE_SONG_FAILURE:
+    //   return {
+    //     ...state,
+    //     error: action.payload,
+    //   };.
+    case ADDING_FAV_SONG_SUCCESS:
       return {
         ...state,
-        // song: action.payload,
-        // chosen: !state.chosen,
-        addingSong: action.payload,
-        error: "",
+        favSongs: [action.payload],
       };
-    case CHOOSE_SONG_FAILURE:
+    case ADDING_FAV_SONG_FAILURE:
       return {
         ...state,
         error: action.payload,
@@ -59,16 +69,6 @@ export const songsReducer = (state = initialState, action) => {
         song: action.payload,
       };
     case DELETE_SONG_FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-      };
-    case ADDING_FAV_SONG_SUCCESS:
-      return {
-        ...state,
-        favSongs: [...state.song, state.addingSong, action.payload],
-      };
-    case ADDING_FAV_SONG_FAILURE:
       return {
         ...state,
         error: action.payload,
