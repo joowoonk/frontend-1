@@ -55,7 +55,7 @@ export const inputField = css`
 `
 export const songList = css`
   width: 80%;
-  margin: 0 auto;
+  margin: 2% auto;
 `
 export const songInfo = css`
   display: flex;

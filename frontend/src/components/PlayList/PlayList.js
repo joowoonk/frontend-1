@@ -43,7 +43,7 @@ const PlayList = (props) => {
           {" "}
           {songState.map((track) => {
             return (
-              <PlayStyles>
+              <PlayStyles key={track.id}>
                 {/* {" "} */}
                 <h2>{track.track_name}</h2>
                 <h2>Artist - {track.artist_name}</h2>
