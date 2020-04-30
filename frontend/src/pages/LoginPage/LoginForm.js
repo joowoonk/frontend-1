@@ -5,12 +5,9 @@ function LoginForm(props) {
 
   return (
     <form className="login-form">
-      <div className={errors}>
-        {<p>{errors.username}</p>}
-        {<p>{errors.password}</p>}
-      </div>
       <label className="username-input">
         Username{" "}
+        {<p>{errors.username}</p>}
         <input
           value={values.username}
           onChange={onInputChange}
@@ -20,6 +17,7 @@ function LoginForm(props) {
       </label>
       <label className="password-input">
         Password{" "}
+        {<p>{errors.password}</p>}
         <input
           value={values.password}
           onChange={onInputChange}

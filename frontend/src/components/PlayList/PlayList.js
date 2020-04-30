@@ -3,6 +3,7 @@ import Play from "../Play/Play";
 // import Chart from "../Chart/Chart";
 
 import PlayListStyles from "./PlayListStyles.jsx";
+import PlayStyles from "../Play/PlayStyles.jsx";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -38,34 +39,32 @@ const PlayList = (props) => {
             })}
         </PlayListStyles>
       ) : (
-        <>
+        <PlayListStyles>
+          {" "}
           {songState.map((track) => {
             return (
-              <div key={track.id}>
-                {/* <Chart /> */}
-                <PlayListStyles>
-                  {/* {" "} */}
-                  <h2>{track.track_name}</h2>
-                  <h2>Artist - {track.artist_name}</h2>
-                  <div>
-                    <button
-                      onClick={() =>
-                        dispatch(recommendSongAction(track.track_key))
-                      }
-                    >
-                      Similar Songs?
-                    </button>
-                    <button
-                      onClick={() => dispatch(favoriteSongAction(track.id))}
-                    >
-                      Save Song
-                    </button>
-                  </div>
-                </PlayListStyles>
-              </div>
+              <PlayStyles key={track.id}>
+                {/* {" "} */}
+                <h2>{track.track_name}</h2>
+                <h2>Artist - {track.artist_name}</h2>
+                <div className="buttons">
+                  <button
+                    onClick={() =>
+                      dispatch(recommendSongAction(track.track_key))
+                    }
+                  >
+                    Similar Songs?
+                  </button>
+                  <button
+                    onClick={() => dispatch(favoriteSongAction(track.id))}
+                  >
+                    Save Song
+                  </button>
+                </div>
+              </PlayStyles>
             );
           })}{" "}
-        </>
+        </PlayListStyles>
       )}
     </>
   );

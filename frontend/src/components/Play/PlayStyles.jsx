@@ -6,6 +6,8 @@ const PlayStyles = styled.div`
 
   button {
     ${button};
+    width: 100%;
+    height: 5vh;
   }
 `
 

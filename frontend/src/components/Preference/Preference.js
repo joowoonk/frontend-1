@@ -37,7 +37,7 @@ const Preference = () => {
         searchField={searchField}
       />
       {/* <AddedSong /> */}
-      <PlayList song={filteredMusic} />;
+      <PlayList song={filteredMusic} />
     </PreferenceStyles>
   );
 };

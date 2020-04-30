@@ -13,9 +13,6 @@ function SignUpForm(props) {
   return (
     <>
       <form className="sign-up-form" onSubmit={handleSubmit}>
-        <div className="errors">
-        </div>
-
         <label className="username-input">
           Username{" "}
           {<p>{errors.username}</p>}
@@ -38,7 +35,6 @@ function SignUpForm(props) {
         </label>
         <label>
           Confirm Password{" "}
-          {<p>{errors.terms}</p>}
           <input
             value={values.confirmPassword}
             onChange={onInputChange}
@@ -48,6 +44,7 @@ function SignUpForm(props) {
         </label>
         <label className="terms-input">
           Terms and Conditions{" "}
+          {<p>{errors.terms}</p>}
           <input
             value={values.terms}
             onChange={onCheckboxChange}
