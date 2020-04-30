@@ -75,3 +75,17 @@ export const songInfo = css`
     width: 30%;
   }
 `
+export const accountForm = css`
+  display: flex;
+  flex-direction: column;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .username-input {
+      margin-top: 10%;
+    }
+`

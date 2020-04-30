@@ -22,18 +22,25 @@ const Account = () => {
   return (
     <div>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          values={userName}
-          onChange={onInputUserName}
-          // handleSubmit={handleSubmit}
-        />
-        <input
-          values={userPassword}
-          type="password"
-          onChange={onInputPassword}
-          // handleSubmit={handleSubmit}
-        />
-        <button>Change Your Account</button>
+        <label className="username-input">
+          New Username{" "}
+          <input
+            values={userName}
+            onChange={onInputUserName}
+            // handleSubmit={handleSubmit}
+          />
+        </label>
+
+        <label className="password-input">
+          New Password{" "}
+          <input
+            values={userPassword}
+            type="password"
+            onChange={onInputPassword}
+            // handleSubmit={handleSubmit}
+          />
+        </label>
+        <button>Save New Settings</button>
       </form>
     </div>
   );

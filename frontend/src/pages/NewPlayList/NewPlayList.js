@@ -29,7 +29,7 @@ const NewPlayList = () => {
                 <h2>{song.track_name}</h2>
                 <h2>Artist - {song.artist_name}</h2>
                 <button className="buttons" onClick={() => dispatch(deleteSongAction(song.id))}>
-                  Delete From The List
+                  Delete
                 </button>
               </div>
             );
