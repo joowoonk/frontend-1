@@ -5,6 +5,8 @@ import { favoriteSongAction } from "../../redux/actions/songAction";
 
 // import { useDispatch } from "react-redux";
 
+import NewPlayListStyles from "./NewPlayListStyles.jsx";
+
 const NewPlayList = () => {
   const playList = useSelector((state) => state.songsReducer.favSongs);
   const dispatch = useDispatch();
@@ -14,7 +16,7 @@ const NewPlayList = () => {
     dispatch(favoriteSongAction());
   }, []);
   return (
-    <div>
+    <NewPlayListStyles>
       {!playList ? (
         <>
           <h1>Loading</h1>
@@ -23,10 +25,10 @@ const NewPlayList = () => {
         <>
           {playList.map((song) => {
             return (
-              <div key={song.id}>
+              <div className="song-card" key={song.id}>
                 <h2>{song.track_name}</h2>
                 <h2>Artist - {song.artist_name}</h2>
-                <button onClick={() => dispatch(deleteSongAction(song.id))}>
+                <button className="buttons" onClick={() => dispatch(deleteSongAction(song.id))}>
                   Delete From The List
                 </button>
               </div>
@@ -34,7 +36,7 @@ const NewPlayList = () => {
           })}
         </>
       )}
-    </div>
+    </NewPlayListStyles>
   );
 };
 
