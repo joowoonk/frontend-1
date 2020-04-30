@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../redux/actions/userAction";
 
 import NavStyles from "./NavStyles.jsx";
@@ -14,6 +14,13 @@ const NavBar = () => {
     dispatch(logOut());
   };
 
+  const songState = useSelector((state) => {
+    return state.songsReducer.recommenedSongs.recommendedSongs;
+  });
+  const clickMe = () => {
+    window.location.href = "/songs";
+  };
+
   return (
     <NavStyles>
       <h1 className="logo">DEEPTUNES</h1>
@@ -21,7 +28,14 @@ const NavBar = () => {
         <Link to="/">Home</Link>
         {localStorage.token ? (
           <>
-            <Link to="/songs">Songs</Link>
+            {songState ? (
+              <Link to="/songs" onClick={() => clickMe()}>
+                Songs
+              </Link>
+            ) : (
+              <Link to="/songs">Songs</Link>
+            )}
+
             <Link to="/playlist">Your Playlist</Link>
             <Link to="/account">Account</Link>
             <Link to="/" onClick={handleLogOut}>
