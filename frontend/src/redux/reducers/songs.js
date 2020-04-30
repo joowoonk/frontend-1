@@ -54,7 +54,9 @@ export const songsReducer = (state = initialState, action) => {
       return {
         ...state,
         favSongs: [
-          ...state.favSongs.filter((song) => song.id !== action.payload),
+          ...state.favSongs.filter(
+            (song) => song.id !== action.payload.track_id
+          ),
         ],
       };
     case DELETE_SONG_FAILURE:
