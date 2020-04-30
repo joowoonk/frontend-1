@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { songList } from "../../components/styles/ComponentStyleConstants.js";
+import { songList, songInfo } from "../../components/styles/ComponentStyleConstants.js";
 
 const AddNewSongsStyles = styled.div`
   display: flex;
@@ -8,6 +8,10 @@ const AddNewSongsStyles = styled.div`
 
   .song-list {
     ${songList};
+  }
+
+  .song-card {
+    ${songInfo};
   }
 `
 

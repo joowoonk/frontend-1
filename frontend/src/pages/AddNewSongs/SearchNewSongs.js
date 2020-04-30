@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { songAction } from "../../redux/actions/songAction";
+import { axiosWithAuth } from "../../utils/axiosWithAuth.js";
 
 import SearchBox from "../../components/SearchBox/SearchBox.js";
 import SongList from "./SongList.js";
 
+const api = "https://spotifysuggester-03.herokuapp.com/api/songs/list/";
+
 function SearchNewSongs() {
   const [searchField, setSearchField] = useState("");
-  const song = useSelector((state) => state.songsReducer.song);
-  const dispatch = useDispatch();
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    dispatch(songAction());
+    axiosWithAuth()
+      .get(api)
+      .then(res => {
+        setSongs(res.data);
+      })
+      .catch(err => {
+        console.log("error getting song data");
+      })
   }, []);
 
-  const filteredSongs = song.filter((track) => {
-    return track.track_name.toLowerCase().includes(searchField.toLowerCase());
+  const filteredSongs = songs.filter((song) => {
+    return song.track_name.toLowerCase().includes(searchField.toLowerCase());
   });
 
   const handleChange = evt => {

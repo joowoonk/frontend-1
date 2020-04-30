@@ -1,6 +1,6 @@
 import React from "react";
 
-import Play from "../../components/Play/Play.js";
+import SongCard from "./SongCard.js";
 
 function SongList(props) {
 
@@ -8,9 +8,9 @@ function SongList(props) {
     <div className="song-list">
       {
         props.filteredSongs
-        .filter((item, idx) => idx < 10)
+        .filter((item, idx) => idx < 100)
         .map(song => {
-          return <Play key={song.id} track={song}/>
+          return <SongCard key={song.id} song={song}/>
         })
       }
     </div>
