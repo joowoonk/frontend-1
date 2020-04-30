@@ -7,12 +7,12 @@ import SignUpPage from "../../pages/Registration/SignUpPage.js";
 
 // import img from "../../assets/DeepTunes-background.jpg";
 
-import AppStyles from "./AppStyles.jsx";
+// import AppStyles from "./AppStyles.jsx";
 import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
 import UserHomePage from "../../pages/UserHomePage/UserHomePage.js";
 import HomePage from "../../pages/HomePage.js";
 import Preference from "../Preference/Preference.js";
-import AddNewSongs from "../../pages/AddNewSongs/AddNewSongs.js";
+
 import NewPlayList from "../../pages/NewPlayList/NewPlayList";
 
 import AccountPage from "../../pages/AccountPage/AccountPage";

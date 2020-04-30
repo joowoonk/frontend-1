@@ -113,14 +113,14 @@ function SignUpPage() {
           password: formValues.password,
         })
         .then((res) => {
-          console.log("testing", { res });
+          // console.log("testing", { res });
           push("/login");
         })
         .catch((err) => console.log(err, "ERROR TO SIGN UP"));
     } else {
       return <div>Not Working</div>;
     }
-    console.log("not working");
+    // console.log("not working");
   };
 
   return (

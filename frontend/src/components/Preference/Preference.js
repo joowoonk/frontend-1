@@ -7,7 +7,6 @@ import PreferenceStyles from "./PreferenceStyles.jsx";
 
 import PlayList from "../PlayList/PlayList";
 import SearchBox from "../SearchBox/SearchBox";
-import AddedSong from "../AddedSong/AddedSong";
 
 const Preference = () => {
   const [searchField, setSearchField] = useState("");

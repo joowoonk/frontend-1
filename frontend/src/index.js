@@ -5,7 +5,7 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import combineReducers from "./redux/reducers/index";
-import { songsReducer } from "./redux/reducers/songs";
+
 import thunk from "redux-thunk";
 import App from "./components/App/App.js";
 import * as serviceWorker from "./serviceWorker";

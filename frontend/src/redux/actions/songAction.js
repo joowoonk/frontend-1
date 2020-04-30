@@ -1,11 +1,8 @@
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
-import axios from "axios";
 
 export const FETCH_SONG_START = "FETCH_SONG_START";
 export const FETCH_SONG_SUCCESS = "FETCH_SONG_SUCCESS";
 export const FETCH_SONG_FAILURE = "FETCH_SONG_FAILURE";
-export const CHOOSE_SONG_SUCCESS = "CHOOSE_SONG_SUCCESS";
-export const CHOOSE_SONG_FAILURE = "CHOOSE_SONG_FAILURE";
 export const DELETE_SONG_SUCCESS = "DELETE_SONG_SUCCESS";
 export const DELETE_SONG_FAILURE = "DELETE_SONG_FAILURE";
 export const ADDING_FAV_SONG_SUCCESS = "ADDING_FAV_SONG_SUCCESS";
@@ -53,7 +50,7 @@ export const favoriteSongAction = (track_id) => {
     axiosWithAuth()
       .get(`/songs/liked`)
       .then((res) => {
-        console.log("favoriteSongAction", res);
+        // console.log("favoriteSongAction", res);
         dispatch({ type: ADDING_FAV_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {
@@ -91,7 +88,7 @@ export const recommendSongAction = (track_key) => {
     axiosWithAuth()
       .post(`/songs/recommended`, { track_key })
       .then((res) => {
-        console.log("WORKING", res.data);
+        // console.log("WORKING", res.data);
         dispatch({ type: RECOMMEND_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {

@@ -8,7 +8,7 @@ import { favoriteSongAction } from "../../redux/actions/songAction";
 const NewPlayList = () => {
   const playList = useSelector((state) => state.songsReducer.favSongs);
   const dispatch = useDispatch();
-  console.log({ playList });
+  // console.log({ playList });
   useEffect(() => {
     dispatch(favoriteSongAction());
   }, []);
