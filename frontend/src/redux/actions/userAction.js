@@ -1,5 +1,8 @@
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import axios from "axios";
+
+import { useHistory } from "react-router-dom";
+
 export const FETCH_USER_START = "FETCH_USER_START";
 export const FETCH_USER_SUCCESS = "FETCH_USER_SUCCESS";
 export const FETCH_USER_FAILURE = "FETCH_USER_FAILURE";
@@ -8,30 +11,37 @@ export const POST_USER_FAILURE = "POST_USER_FAILURE";
 
 export const LOGOUT = "LOGOUT";
 
-export const postLogin = () => {
-  return (dispatch) => {
-    dispatch({ type: FETCH_USER_START });
-    axiosWithAuth()
-      .get(`https://`)
-      .then((res) => {
-        dispatch({ type: FETCH_USER_SUCCESS });
-      })
-      .catch((err) => {
-        dispatch({
-          type: FETCH_USER_FAILURE,
-          payload: err,
-        });
-      });
-  };
-};
+// export const postLogin = (user) => {
+//   return (dispatch) => {
+//     dispatch({ type: FETCH_USER_START });
+//     axiosWithAuth()
+//       .post("/auth/login", user)
+//       .then((res) => {
+//         localStorage.setItem("token", res.data.token);
+//         dispatch({
+//           type: FETCH_USER_SUCCESS,
+//         });
+//       })
+//       .catch((err) => {
+//         dispatch({
+//           type: FETCH_USER_FAILURE,
+//           payload: err,
+//         });
+//       });
+//   };
+// };
 
-export const postUserAction = (user) => {
+export const postUserAction = (username, password) => {
+  console.log(username, password);
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });
     axiosWithAuth()
-      .post(`http://localhost:3333/`, user)
+      .put(`/auth/user`, { username, password })
       .then((res) => {
-        dispatch({ type: POST_USER_SUCCESS, payload: res.data });
+        dispatch({
+          type: POST_USER_SUCCESS,
+          payload: res.data,
+        });
       })
       .catch((err) => {
         dispatch({

@@ -11,6 +11,8 @@ import UserHomePage from "../../pages/UserHomePage/UserHomePage.js";
 import HomePage from "../../pages/HomePage.js";
 import Preference from "../Preference/Preference.js";
 
+import AccountPage from "../../pages/AccountPage/AccountPage";
+
 function App() {
   return (
     <div>
@@ -37,6 +39,10 @@ function App() {
           <NavBar />
           <Preference />
         </PrivateRoute>
+        <Route path="/account">
+          <NavBar />
+          <AccountPage />
+        </Route>
       </Switch>
     </div>
   );

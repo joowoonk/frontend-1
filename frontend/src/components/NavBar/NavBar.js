@@ -20,9 +20,12 @@ const NavBar = () => {
       <div className="menuNav">
         <Link to="/">Home</Link>
         {localStorage.token ? (
-          <Link to="/" onClick={handleLogOut}>
-            Log Out
-          </Link>
+          <>
+            <Link to="/" onClick={handleLogOut}>
+              Log Out
+            </Link>
+            <Link to="/account">Account</Link>
+          </>
         ) : (
           <Link to="/login">Log In</Link>
         )}

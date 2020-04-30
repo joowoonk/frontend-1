@@ -9,7 +9,7 @@ import {
   POST_USER_FAILURE,
 } from "../actions/userAction";
 const initialState = {
-  user: "",
+  user: [],
   error: "",
   chosen: false,
   loading: false,
@@ -26,21 +26,20 @@ export const userReducer = (state = initialState, action) => {
       return {
         ...state,
       };
-    // case FETCH_USER_SUCCESS:
-    //   return {
-    //     ...state,
-    //     song: [...action.payload],
-    //     error: "",
-    //   };
-    // case FETCH_USER_FAILURE:
-    //   return {
-    //     ...state,
-    //     err: action.payload,
-    //   };
+    case FETCH_USER_SUCCESS:
+      return {
+        ...state,
+        error: "",
+      };
+    case FETCH_USER_FAILURE:
+      return {
+        ...state,
+        err: action.payload,
+      };
     case POST_USER_SUCCESS:
       return {
         ...state,
-        user: [action.payload],
+        user: action.payload,
       };
     case POST_USER_FAILURE:
       return {

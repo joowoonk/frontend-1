@@ -7,6 +7,7 @@ import * as yup from "yup";
 import LoginForm from "./LoginForm.js";
 import { postUserAction } from "../../redux/actions/userAction";
 import { useDispatch } from "react-redux";
+import { postLogin } from "../../redux/actions/userAction";
 
 import { axiosWithAuth } from "../../utils/axiosWithAuth.js";
 import { useHistory } from "react-router-dom";
@@ -58,7 +59,7 @@ function LoginPage() {
     });
   };
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
     axiosWithAuth()
       .post("/auth/login", formValues)
@@ -66,7 +67,6 @@ function LoginPage() {
         localStorage.setItem("token", res.data.token);
         push("/preference");
       });
-    dispatch(postUserAction(formValues));
   };
 
   return (
