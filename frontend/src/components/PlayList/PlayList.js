@@ -1,5 +1,6 @@
 import React from "react";
 import Play from "../Play/Play";
+// import Chart from "../Chart/Chart";
 
 import PlayListStyles from "./PlayListStyles.jsx";
 import PlayStyles from "../Play/PlayStyles.jsx";
@@ -18,7 +19,10 @@ const PlayList = (props) => {
   const songState = useSelector((state) => {
     return state.songsReducer.recommenedSongs.recommendedSongs;
   });
-  // console.log({ songState });
+  const visiualization = useSelector((state) => {
+    return state.songsReducer.recommenedSongs;
+  });
+  console.log({ songState, visiualization });
 
   return (
     <>

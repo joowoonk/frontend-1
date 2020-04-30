@@ -8,6 +8,7 @@ const SearchBox = ({ placeholder, searchField, handleChange }) => (
       placeholder={placeholder}
       // value={searchField}
       onChange={handleChange}
+      className="searchBox"
     />
   </SearchBoxStyles>
 );
