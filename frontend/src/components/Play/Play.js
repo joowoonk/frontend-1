@@ -5,7 +5,7 @@ const Play = (props) => {
     <PlayStyles>
       <h2>{props.track.track_name}</h2>
       <h2>Artist - {props.track.artist_name}</h2>
-      <button>Your Song?</button>
+      <button>Add Song</button>
     </PlayStyles>
   );
 };

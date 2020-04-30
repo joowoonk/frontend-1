@@ -14,13 +14,11 @@ function SignUpForm(props) {
     <>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <div className="errors">
-          {<p>{errors.username}</p>}
-          {<p>{errors.password}</p>}
-          {<p>{errors.terms}</p>}
         </div>
 
         <label className="username-input">
           Username{" "}
+          {<p>{errors.username}</p>}
           <input
             value={values.username}
             onChange={onInputChange}
@@ -30,6 +28,7 @@ function SignUpForm(props) {
         </label>
         <label>
           Password{" "}
+          {<p>{errors.password}</p>}
           <input
             value={values.password}
             onChange={onInputChange}
@@ -39,6 +38,7 @@ function SignUpForm(props) {
         </label>
         <label>
           Confirm Password{" "}
+          {<p>{errors.terms}</p>}
           <input
             value={values.confirmPassword}
             onChange={onInputChange}

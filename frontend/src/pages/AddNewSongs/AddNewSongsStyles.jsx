@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { songList } from "../../components/styles/ComponentStyleConstants.js";
 
 const AddNewSongsStyles = styled.div`
   display: flex;
@@ -6,8 +7,7 @@ const AddNewSongsStyles = styled.div`
   ${'' /* color: white; */}
 
   .song-list {
-    margin: 0 auto;
-    width: 80%;
+    ${songList};
   }
 `
 

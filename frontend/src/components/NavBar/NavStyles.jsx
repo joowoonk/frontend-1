@@ -14,6 +14,9 @@ const NavStyles = styled.nav`
     font-family: ${bangers};
     font-size: 5rem;
     margin: 2%;
+    letter-spacing: 0.3rem;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 8px, #FFF 0px 0px 13px, #99299B 0px 0px 15px, #99299B 0px 0px 20px, #99299B 0px 0px 30px, #99299B 0px 0px 0px, #99299B 0px 0px 50px;
+    }
   }
 
   .menuNav {
