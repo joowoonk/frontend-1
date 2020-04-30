@@ -2,6 +2,7 @@ import React from "react";
 import Play from "../Play/Play";
 
 import PlayListStyles from "./PlayListStyles.jsx";
+import PlayStyles from "../Play/PlayStyles.jsx";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -34,11 +35,11 @@ const PlayList = (props) => {
             })}
         </PlayListStyles>
       ) : (
-        <>
+        <PlayListStyles>
           {" "}
           {songState.map((track) => {
             return (
-              <PlayListStyles>
+              <PlayStyles>
                 {/* {" "} */}
                 <h2>{track.track_name}</h2>
                 <h2>Artist - {track.artist_name}</h2>
@@ -56,10 +57,10 @@ const PlayList = (props) => {
                     Save Song
                   </button>
                 </div>
-              </PlayListStyles>
+              </PlayStyles>
             );
           })}{" "}
-        </>
+        </PlayListStyles>
       )}
     </>
   );
