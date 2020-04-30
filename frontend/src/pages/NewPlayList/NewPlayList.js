@@ -9,7 +9,7 @@ const NewPlayList = () => {
   const playList = useSelector((state) => state.songsReducer.favSongs);
   const dispatch = useDispatch();
   // const [newSongs, setNewSongs] = useState(playList);
-  console.log({ playList });
+  // console.log({ playList });
   useEffect(() => {
     dispatch(favoriteSongAction());
   }, []);
