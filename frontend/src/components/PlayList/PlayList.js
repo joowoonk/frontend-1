@@ -51,7 +51,6 @@ const PlayList = (props) => {
         </PlayListStyles>
       ) : (
         <PlayListStyles>
-          {" "}
           <div className="chart">
             <div className="graph">
               <Chart visiualization={visiualization} />
@@ -62,6 +61,7 @@ const PlayList = (props) => {
               attributes, click this description box.
             </p>
           </div>
+          <h4>Here are the 10 Similar Songs</h4>
           {songState.map((track) => {
             return (
               <PlayStyles key={track.id}>
