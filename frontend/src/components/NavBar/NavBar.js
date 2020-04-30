@@ -21,10 +21,12 @@ const NavBar = () => {
         <Link to="/">Home</Link>
         {localStorage.token ? (
           <>
+            <Link to="/songs">Songs</Link>
+            <Link to="/playlist">Your Playlist</Link>
+            <Link to="/account">Account</Link>
             <Link to="/" onClick={handleLogOut}>
               Log Out
             </Link>
-            <Link to="/account">Account</Link>
           </>
         ) : (
           <Link to="/login">Log In</Link>

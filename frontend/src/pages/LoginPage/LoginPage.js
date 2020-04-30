@@ -65,7 +65,7 @@ function LoginPage() {
       .post("/auth/login", formValues)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        push("/preference");
+        push("/songs");
       });
   };
 

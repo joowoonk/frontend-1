@@ -31,18 +31,20 @@ export const songAction = () => {
   };
 };
 
-export const chooseSongAction = (song) => {
+export const favoriteSongAction = (trackId) => {
   //liking a song so adding to the list
+  //search by track_id
   return (dispatch) => {
     dispatch({ type: FETCH_SONG_START });
     axiosWithAuth()
-      .post(`/songs/liked`, song)
+      .post(`/songs/liked`, { trackId })
       .then((res) => {
-        dispatch({ type: CHOOSE_SONG_SUCCESS, payload: res.data });
+        console.log("favoriteSongAction", res);
+        dispatch({ type: ADDING_FAV_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {
         dispatch({
-          type: CHOOSE_SONG_FAILURE,
+          type: ADDING_FAV_SONG_FAILURE,
           payload: err,
         });
       });
@@ -61,24 +63,6 @@ export const deleteSongAction = (id) => {
       .catch((err) => {
         dispatch({
           type: DELETE_SONG_FAILURE,
-          payload: err,
-        });
-      });
-  };
-};
-
-export const addingSongAction = (id) => {
-  //liking a song so adding to the list
-  return (dispatch) => {
-    dispatch({ type: FETCH_SONG_START });
-    axiosWithAuth()
-      .post(`/songs/liked`, { id })
-      .then((res) => {
-        dispatch({ type: ADDING_FAV_SONG_SUCCESS, payload: res.data });
-      })
-      .catch((err) => {
-        dispatch({
-          type: ADDING_FAV_SONG_FAILURE,
           payload: err,
         });
       });
