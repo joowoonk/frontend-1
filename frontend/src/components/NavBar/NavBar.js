@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../redux/actions/userAction";
 
@@ -6,8 +6,6 @@ import NavStyles from "./NavStyles.jsx";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const token = localStorage.getItem("token");
-  const [local, setLocal] = useState(localStorage);
   const dispatch = useDispatch();
 
   const handleLogOut = () => {

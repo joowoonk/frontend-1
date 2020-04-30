@@ -4,8 +4,6 @@ import {
   FETCH_SONG_START,
   FETCH_SONG_SUCCESS,
   FETCH_SONG_FAILURE,
-  CHOOSE_SONG_SUCCESS,
-  CHOOSE_SONG_FAILURE,
   DELETE_SONG_SUCCESS,
   DELETE_SONG_FAILURE,
   ADDING_FAV_SONG_SUCCESS,
@@ -29,7 +27,7 @@ export const songsReducer = (state = initialState, action) => {
         ...state,
       };
     case FETCH_SONG_SUCCESS:
-      console.log("action.payload", action.payload);
+      // console.log("action.payload", action.payload);
       return {
         ...state,
         song: action.payload,
@@ -51,7 +49,7 @@ export const songsReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case DELETE_SONG_SUCCESS:
-      console.log("delete", action.payload);
+      // console.log("delete", action.payload);
       return {
         ...state,
         favSongs: [action.payload],

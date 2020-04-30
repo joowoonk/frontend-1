@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Play from "../Play/Play";
 
 import PlayListStyles from "./PlayListStyles.jsx";
 import { useSelector, useDispatch } from "react-redux";
-import { songsReducer } from "../../redux/reducers/songs";
 
 import {
   favoriteSongAction,
@@ -11,14 +10,14 @@ import {
 } from "../../redux/actions/songAction";
 
 const PlayList = (props) => {
-  console.log("PlayList", props);
+  // console.log("PlayList", props);
   //10, 20, 50 being listed for the songs
   const dispatch = useDispatch();
 
   const songState = useSelector((state) => {
     return state.songsReducer.recommenedSongs.recommendedSongs;
   });
-  console.log({ songState });
+  // console.log({ songState });
 
   return (
     <>
