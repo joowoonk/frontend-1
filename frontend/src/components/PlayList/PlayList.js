@@ -43,7 +43,7 @@ const PlayList = (props) => {
                 {/* {" "} */}
                 <h2>{track.track_name}</h2>
                 <h2>Artist - {track.artist_name}</h2>
-                <div>
+                <div className="buttons">
                   <button
                     onClick={() =>
                       dispatch(recommendSongAction(track.track_key))

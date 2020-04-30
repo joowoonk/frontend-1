@@ -60,6 +60,7 @@ export const songList = css`
 export const songInfo = css`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.8rem;
   border: 2px solid ${aqua};
   border-radius: 15px;
@@ -67,4 +68,8 @@ export const songInfo = css`
   color: white;
   padding: 2%;
   margin-bottom: 2%;
+
+  h2 {
+    padding: 2%;
+  }
 `
