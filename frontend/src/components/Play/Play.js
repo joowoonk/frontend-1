@@ -21,11 +21,6 @@ const Play = (props) => {
     test.style = "display: none";
   };
 
-  // const removeSearchBox = () => {
-  //   const test = document.querySelector(".search-box");
-  //   console.log(test);
-  // };
-
   return (
     <PlayStyles>
       <h2>{props.track.track_name}</h2>
