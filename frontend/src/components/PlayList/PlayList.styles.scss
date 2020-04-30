@@ -1,0 +1,30 @@
+.chart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3%;
+  //   background-color: grey;
+  .graph {
+    font-size: 2rem;
+    margin: 1% auto;
+    // width: 50%;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 3%;
+    border: 2px solid aqua;
+  }
+  .description {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    width: 50%;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding: 3%;
+    border: 2px solid aqua;
+  }
+}

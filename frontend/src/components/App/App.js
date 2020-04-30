@@ -16,6 +16,7 @@ import Preference from "../Preference/Preference.js";
 import NewPlayList from "../../pages/NewPlayList/NewPlayList";
 
 import AccountPage from "../../pages/AccountPage/AccountPage";
+import Description from "../Description/description.js";
 // import SimilarSongs from "../../pages/SimilarSongs/SimilarSongs.js";
 // import AddNewSongs from "../../pages/AddNewSongs/AddNewSongs.js";
 
@@ -56,10 +57,10 @@ function App() {
           <NavBar />
           <NewPlayList />
         </PrivateRoute>
-        {/* <PrivateRoute exact path="/recommend">
+        <PrivateRoute exact path="/description">
           <NavBar />
-          <SimilarSongs />
-        </PrivateRoute> */}
+          <Description />
+        </PrivateRoute>
         {/* <Route path="/addnewsongs">
           <NavBar />
           <AddNewSongs />

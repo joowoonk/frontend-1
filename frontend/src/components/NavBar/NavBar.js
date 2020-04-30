@@ -4,9 +4,11 @@ import { logOut } from "../../redux/actions/userAction";
 
 import NavStyles from "./NavStyles.jsx";
 import { Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 const NavBar = () => {
   const dispatch = useDispatch();
+  // const { push } = useHistory();
 
   const handleLogOut = () => {
     dispatch(logOut());

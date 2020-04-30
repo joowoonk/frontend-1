@@ -6,12 +6,19 @@ import PlayListStyles from "./PlayListStyles.jsx";
 import PlayStyles from "../Play/PlayStyles.jsx";
 import { useSelector, useDispatch } from "react-redux";
 
+import { useHistory } from "react-router-dom";
+
+import "./PlayList.styles.scss";
+
+import Chart from "../Chart/Chart";
+
 import {
   favoriteSongAction,
   recommendSongAction,
 } from "../../redux/actions/songAction";
 
 const PlayList = (props) => {
+  const { push } = useHistory();
   // console.log("PlayList", props);
   //10, 20, 50 being listed for the songs
   const dispatch = useDispatch();
@@ -22,7 +29,11 @@ const PlayList = (props) => {
   const visiualization = useSelector((state) => {
     return state.songsReducer.recommenedSongs;
   });
-  console.log({ songState, visiualization });
+  // console.log({ songState, visiualization });
+
+  const descriptionPage = () => {
+    push("./description");
+  };
 
   return (
     <>
@@ -41,6 +52,16 @@ const PlayList = (props) => {
       ) : (
         <PlayListStyles>
           {" "}
+          <div className="chart">
+            <div className="graph">
+              <Chart visiualization={visiualization} />
+            </div>
+            <p onClick={() => descriptionPage()} className="description">
+              This graph shows the average attributes of the ten most similar
+              songs to the one you selected. For more information on the
+              attributes, click this description box.
+            </p>
+          </div>
           {songState.map((track) => {
             return (
               <PlayStyles key={track.id}>
