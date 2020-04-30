@@ -11,9 +11,8 @@ const NewPlayList = () => {
   const [newSongs, setNewSongs] = useState(playList);
   console.log({ newSongs });
   useEffect(() => {
-    setNewSongs(playList);
     dispatch(favoriteSongAction());
-  }, [newSongs]);
+  }, []);
   return (
     <div>
       {!playList ? (
