@@ -40,7 +40,7 @@ const Account = () => {
             // handleSubmit={handleSubmit}
           />
         </label>
-        <button>Save New Settings</button>
+        <button onClick={handleSubmit}>Save New Settings</button>
       </form>
     </div>
   );
