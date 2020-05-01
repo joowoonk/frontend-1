@@ -1,5 +1,3 @@
-// import actionTypes from "../actionTypes";
-
 import {
   FETCH_USER_START,
   FETCH_USER_SUCCESS,
@@ -13,11 +11,6 @@ const initialState = {
   error: "",
   chosen: false,
   loading: false,
-  // addingSong: [
-  //   {
-  //     id: "",
-  //   },
-  // ],
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -47,7 +40,6 @@ export const userReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case LOGOUT:
-      // console.log("WORKING!");
       localStorage.clear();
       window.location.href = "/";
       return {

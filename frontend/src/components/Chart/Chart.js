@@ -1,9 +1,7 @@
 import React from "react";
 import Plot from "react-plotly.js";
-import { Redirect } from "react-router-dom";
 
 const Chart = (props) => {
-  console.log({ props });
   return (
     <>
       <Plot
@@ -36,8 +34,8 @@ const Chart = (props) => {
         ]}
         //   style={{ width: 100%, height: 100%" }}
         layout={{
-          width: 250,
-          height: 250,
+          width: 500,
+          height: 500,
           title: "Average Attributes of Your Musical Preferences ",
           paper_bgcolor: "rgba(0, 0, 0, 0)",
           plot_bgcolor: "rgba(0,0,0,0)",

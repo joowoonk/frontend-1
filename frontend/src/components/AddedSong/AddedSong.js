@@ -6,7 +6,6 @@ const AddedSong = () => {
   const likedSong = useSelector((state) => {
     return state.songsReducer.addingSong;
   });
-  // console.log(likedSong);
 
   return <div key={likedSong.id}>{likedSong.song}</div>;
 };
