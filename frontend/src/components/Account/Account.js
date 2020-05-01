@@ -17,7 +17,11 @@ const Account = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postUserAction(userName, userPassword));
+    if (userName && userPassword) {
+      dispatch(postUserAction(userName, userPassword));
+    } else {
+      alert("make sure to give a new username and password!");
+    }
   };
   return (
     <div>
