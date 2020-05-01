@@ -25,7 +25,7 @@ Highlight commonalities across the X most popular songs in the dataset</p>
 
 <h2>Roles:</h2>
 <h3>Machine Learning Engineers: Avery A. Quinn ,Will Stauffer-Norris, and Jacob Padgett</h3>
-<h3>Data Engineers: Johan Mazorra and Corey </h3>
+<h3>Data Engineers: Johan Mazorra and Corey Evitts </h3>
 <h3>WEB UI Developer: Matias Iturbide </h3>
 <h3>WEB React I: Justin Lohner</h3>
 <h3>WEB React II: Joo Woon Kang</h3>
