@@ -18,7 +18,7 @@ User can edit and delete their favorites.</p>
 Highlight commonalities across the X most popular songs in the dataset</p>
 <h2>Web:</h2>
 <p>When the user has a large number of favorites, find a way to visualize the audio features the user likes the most in an attractive way.</p>
-<p>Around 10,000 songs are in this website</p>
+<p>Around 10,000 songs are registered into the app while using React and Redux</p>
 <h2>UX:</h2>
 <p>Collaborate on a portion or all of a Web MVP with any Web teammate. For example: File structuring, Git, Styles, Semantic elements, etc. Learn something new and practice cross-collaborating.</p>
 
