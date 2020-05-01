@@ -23,12 +23,7 @@ const Account = () => {
     <div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <label className="username-input">
-          New Username{" "}
-          <input
-            values={userName}
-            onChange={onInputUserName}
-            // handleSubmit={handleSubmit}
-          />
+          New Username <input values={userName} onChange={onInputUserName} />
         </label>
 
         <label className="password-input">
@@ -37,7 +32,6 @@ const Account = () => {
             values={userPassword}
             type="password"
             onChange={onInputPassword}
-            // handleSubmit={handleSubmit}
           />
         </label>
         <button onClick={handleSubmit}>Save New Settings</button>

@@ -1,5 +1,3 @@
-// import actionTypes from "../actionTypes";
-
 import {
   FETCH_SONG_START,
   FETCH_SONG_SUCCESS,
@@ -27,7 +25,6 @@ export const songsReducer = (state = initialState, action) => {
         ...state,
       };
     case FETCH_SONG_SUCCESS:
-      // console.log("action.payload", action.payload);
       return {
         ...state,
         song: action.payload,
@@ -49,8 +46,6 @@ export const songsReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case DELETE_SONG_SUCCESS:
-      // console.log("delete action.payload", action.payload);
-      // console.log("delete state", state);
       return {
         ...state,
         favSongs: [

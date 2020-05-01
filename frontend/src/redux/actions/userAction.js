@@ -9,7 +9,6 @@ export const POST_USER_FAILURE = "POST_USER_FAILURE";
 export const LOGOUT = "LOGOUT";
 
 export const postUserAction = (username, password) => {
-  // console.log(username, password);
   return (dispatch) => {
     dispatch({ type: FETCH_USER_START });
     axiosWithAuth()
@@ -31,7 +30,6 @@ export const postUserAction = (username, password) => {
 
 export const logOut = () => {
   return (dispatch) => {
-    // console.log("LOGOUT?");
     dispatch({ type: LOGOUT });
   };
 };

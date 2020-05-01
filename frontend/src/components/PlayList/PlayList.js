@@ -20,8 +20,7 @@ import {
 
 const PlayList = (props) => {
   const { push } = useHistory();
-  // console.log("PlayList", props);
-  //10, 20, 50 being listed for the songs
+
   const dispatch = useDispatch();
 
   const songState = useSelector((state) => {
@@ -30,7 +29,6 @@ const PlayList = (props) => {
   const visiualization = useSelector((state) => {
     return state.songsReducer.recommenedSongs;
   });
-  // console.log({ songState, visiualization });
 
   const descriptionPage = () => {
     push("./description");
@@ -40,10 +38,6 @@ const PlayList = (props) => {
     <>
       {!songState ? (
         <PlayListStyles>
-          {/* <div className="info">
-        <h2>Song Name</h 2>
-        <h2>Artist</h2>
-      </div> */}
           <SearchBox
             placeholder="Search By Track Name"
             handleChange={props.handleChange}
@@ -71,7 +65,6 @@ const PlayList = (props) => {
           {songState.map((track) => {
             return (
               <PlayStyles key={track.id}>
-                {/* {" "} */}
                 <h2>{track.track_name}</h2>
                 <h2>Artist - {track.artist_name}</h2>
                 <div className="buttons">
@@ -98,6 +91,3 @@ const PlayList = (props) => {
 };
 
 export default PlayList;
-
-//       <h2> {props.play.track_name}</h2>
-//       <p className="artistName">{props.play.artist_name}</p>

@@ -100,8 +100,6 @@ function SignUpPage() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    // setFormValues({ ...formValues });
-    // console.log("Working", evt);
 
     if (
       formValues.password === formValues.confirmPassword &&
@@ -113,14 +111,12 @@ function SignUpPage() {
           password: formValues.password,
         })
         .then((res) => {
-          // console.log("testing", { res });
           push("/login");
         })
         .catch((err) => console.log(err, "ERROR TO SIGN UP"));
     } else {
       alert("You have not met requirements");
     }
-    // console.log("not working");
   };
 
   return (
