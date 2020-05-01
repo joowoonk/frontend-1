@@ -26,7 +26,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <NavBar />
-          <HomePage />
+          <LoginPage />
         </Route>
 
         <Route path="/login">
