@@ -1,5 +1,3 @@
-// import actionTypes from "../actionTypes";
-
 import {
   FETCH_SONG_START,
   FETCH_SONG_SUCCESS,
