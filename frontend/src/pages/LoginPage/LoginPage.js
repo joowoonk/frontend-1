@@ -64,7 +64,10 @@ function LoginPage() {
         push("/songs");
       })
       .catch((err) => {
-        alert("This account doesn't exist!");
+        alert(
+          `This account doesn't seem to exist!
+          Make sure to input correct username/password`
+        );
         return console.log(err);
       });
   };
