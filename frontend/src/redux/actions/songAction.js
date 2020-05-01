@@ -17,7 +17,6 @@ export const songAction = () => {
     axiosWithAuth()
       .get(`/songs/list/`)
       .then((res) => {
-        console.log("res from songAction", res);
         dispatch({ type: FETCH_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {
@@ -32,15 +31,11 @@ export const songAction = () => {
 export const favoriteSongAction = (track_id) => {
   //liking a song so adding to the list
   //search by track_id
-  console.log({ track_id });
   return (dispatch) => {
     dispatch({ type: FETCH_SONG_START });
     axiosWithAuth()
       .post(`/songs/liked`, { track_id })
-      .then((res) => {
-        // console.log("favoriteSongAction", res);
-        // dispatch({ type: ADDING_FAV_SONG_SUCCESS, payload: res.data });
-      })
+      .then((res) => {})
       .catch((err) => {
         dispatch({
           type: ADDING_FAV_SONG_FAILURE,
@@ -50,7 +45,6 @@ export const favoriteSongAction = (track_id) => {
     axiosWithAuth()
       .get(`/songs/liked`)
       .then((res) => {
-        // console.log("favoriteSongAction", res);
         dispatch({ type: ADDING_FAV_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {
@@ -65,13 +59,11 @@ export const favoriteSongAction = (track_id) => {
 export const deleteSongAction = (track_id) => {
   //deleting a song so adding to the suggested list
   //remember to pass id
-  // console.log({ track_id });
   return (dispatch) => {
     dispatch({ type: FETCH_SONG_START });
     axiosWithAuth()
       .delete(`/songs/liked`, { data: { track_id } })
       .then((res) => {
-        console.log({ res });
         dispatch({ type: DELETE_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {
@@ -90,7 +82,6 @@ export const recommendSongAction = (track_key) => {
     axiosWithAuth()
       .post(`/songs/recommended`, { track_key })
       .then((res) => {
-        // console.log("WORKING", res.data);
         dispatch({ type: RECOMMEND_SONG_SUCCESS, payload: res.data });
       })
       .catch((err) => {

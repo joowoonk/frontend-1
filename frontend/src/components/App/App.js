@@ -10,7 +10,6 @@ import SignUpPage from "../../pages/Registration/SignUpPage.js";
 // import AppStyles from "./AppStyles.jsx";
 import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
 import UserHomePage from "../../pages/UserHomePage/UserHomePage.js";
-import HomePage from "../../pages/HomePage.js";
 import Preference from "../Preference/Preference.js";
 
 import NewPlayList from "../../pages/NewPlayList/NewPlayList";

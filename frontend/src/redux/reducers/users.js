@@ -47,7 +47,6 @@ export const userReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case LOGOUT:
-      // console.log("WORKING!");
       localStorage.clear();
       window.location.href = "/";
       return {

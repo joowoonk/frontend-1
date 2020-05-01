@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PlayStyles from "./PlayStyles.jsx";
 
 import { useDispatch } from "react-redux";
@@ -9,27 +9,14 @@ import {
 
 const Play = (props) => {
   const dispatch = useDispatch();
-  // const [searchBoxElement, setSearchBoxElement] = useState("");
 
   const saveMusic = () => {
     dispatch(favoriteSongAction(props.track.id));
-    // console.log(props.track.id);
   };
 
   const recommendSong = () => {
     dispatch(recommendSongAction(props.track.track_key));
-    // const test = document.querySelector(".search-box");
-    // console.log(test);
   };
-
-  // const removeSearchBox = () => {
-  //   const searchBox = document.getElementById("search-box");
-  //   console.log(searchBox);
-  //   setSearchBoxElement(searchBox);
-  //   // const test1 = (test) => {test.style.display = "none"};
-  //   // test1(test);
-  //   console.log(searchBoxElement);
-  // };
 
   return (
     <PlayStyles>
