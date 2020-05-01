@@ -11,7 +11,7 @@ User can save their favorite songs to their profile in the Web backend
 Once the user has their favorites saved the DS API can make suggestions based on the audio features of their favorites.
 User can request suggested songs based on what they are in the mood for ( acousticness, danceability, duration, energy, etc)
 User can edit and delete their favorites.</p>
-<h1>Stretch</h1>
+<h1>:white_check_mark: Stretch</h1>
 <p>The app hits the Spotify API to enable the user to search for any song on the platform.</p>
 <h2>DS:</h2>
 <p>Create animations of your visualizations
