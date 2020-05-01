@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { button, inputField, accountForm } from "../../components/styles/ComponentStyleConstants";
+import { button, inputField } from "../../components/styles/ComponentStyleConstants";
 
 const SignUpPageStyles = styled.div`
-  ${'' /* ${accountForm}; */}
-
   display: flex;
   flex-direction: column;
 

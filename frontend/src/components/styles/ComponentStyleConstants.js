@@ -75,17 +75,29 @@ export const songInfo = css`
     width: 30%;
   }
 `
-export const accountForm = css`
-  display: flex;
-  flex-direction: column;
-
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .username-input {
-      margin-top: 10%;
-    }
-`
+// export const accountForm = css`
+//   display: flex;
+//   flex-direction: column;
+//
+//   .username-input {
+//     margin-top: 10%;
+//   }
+//
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//
+//     label {
+//       ${inputField};
+//     }
+//
+//     button {
+//       ${button};
+//       width: 10%;
+//       margin: 2% 0% 8%;
+//       height: 6vh;
+//     }
+//   }
+// `
