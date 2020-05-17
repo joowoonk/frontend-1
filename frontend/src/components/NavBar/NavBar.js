@@ -14,7 +14,7 @@ const NavBar = () => {
     dispatch(logOut());
   };
 
-  const songState = useSelector((state) => {
+  const silmilarSongState = useSelector((state) => {
     return state.songsReducer.recommenedSongs.recommendedSongs;
   });
   const clickMe = () => {
@@ -28,7 +28,7 @@ const NavBar = () => {
         <a href="https://jdmtias.github.io/marketing/">Home</a>
         {localStorage.token ? (
           <>
-            {songState ? (
+            {silmilarSongState ? (
               <Link to="/songs" onClick={() => clickMe()}>
                 Songs
               </Link>

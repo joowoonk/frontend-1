@@ -23,7 +23,7 @@ const PlayList = (props) => {
 
   const dispatch = useDispatch();
 
-  const songState = useSelector((state) => {
+  let songState = useSelector((state) => {
     return state.songsReducer.recommenedSongs.recommendedSongs;
   });
   const visiualization = useSelector((state) => {
@@ -33,6 +33,7 @@ const PlayList = (props) => {
   const descriptionPage = () => {
     push("./description");
   };
+  const backToTrack = () => {};
 
   return (
     <>
@@ -43,6 +44,7 @@ const PlayList = (props) => {
             handleChange={props.handleChange}
             searchField={props.searchField}
           />
+
           {props.song
             .filter((item, idx) => idx < 10)
             .map((track) => {
@@ -52,6 +54,7 @@ const PlayList = (props) => {
       ) : (
         <PlayListStyles>
           <div className="chart">
+            <button onClick={() => backToTrack()}>Go Back to Track</button>
             <div className="graph">
               <Chart visiualization={visiualization} />
             </div>

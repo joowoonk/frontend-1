@@ -8,9 +8,7 @@ import NewPlayListStyles from "./NewPlayListStyles.jsx";
 const NewPlayList = () => {
   const playList = useSelector((state) => state.songsReducer.favSongs);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(favoriteSongAction());
-  }, []);
+
   return (
     <NewPlayListStyles>
       {!playList ? (
